@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			14) Заполнить массив из 10 элементов случайными числами в интервале [-10..10] и сделать реверс отдельно для 1-ой и 2-ой половин массива.
+		*/
+		function getRandom(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
+		}
+
+		var arr1 = [], arr2 = [], arr3 = [], rand;
+		for (var i = 0; i < 10; i++) {
+			rand = getRandom(-10, 10);
+			arr1.push(rand);
+		}
+		console.log(arr1);
+		for (var ind of arr1) {
+			if (ind < 0) {
+				arr2.push(ind);
+			}
+			else if (ind >= 0) {
+				arr3.push(ind);
+			}
+		}
+		console.log(arr2);
+		console.log(arr2.reverse());
+		console.log(arr3);
+		console.log(arr3.reverse());
+		
+	</script>
+</body>
+</html>

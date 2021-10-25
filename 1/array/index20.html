@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			20)В одномерном массиве найти минимальный и максимальный элементы. Вычислить их разность.Например, дан массив [3, 5, 9, 4, 2, 6]. Максимальным числом является 9, минимальным является 2. Разность составляет 9-2=7.
+		*/
+		function getCompar(a, b) {
+			if (a > b) return 1; // если первое значение больше второго
+			if (a == b) return 0; // если равны
+			if (a < b) return -1; // если первое значение меньше второго
+		}
+		function getRand(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
+		}
+		var arr = [],
+			max,
+			min,
+			diff,
+			rand;
+
+			for (var i = 0; i < 10; i++) {
+				rand = getRand(-20, 20);
+				arr.push(rand);
+			}
+			console.log(arr);
+
+			arr.sort(getCompar);
+			max = arr.pop();
+			min = arr.shift();
+			console.log(max);
+			console.log(min);
+			diff = max - min;
+			console.log(diff);
+	</script>
+</body>
+</html>

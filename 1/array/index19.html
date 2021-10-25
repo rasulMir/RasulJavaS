@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		19) Дан массив, содержащий положительные и отрицательные числа. Заменить все элементы массива на противоположные по знаку.
+		Например, задан массив [1, -5, 0, 3, -4]. После преобразования должно получиться [-1, 5, 0, -3, 4].
+		*/
+
+		var user,
+			arr = [],
+			arr2 = [],
+			multi;
+		
+		for (var i = 0; i < 5; i++) {
+			user = +prompt('Enter number');
+			arr.push(user);
+		}
+
+		for (var ind of arr) {
+			multi = ind * 2;
+			ind -= multi;
+			arr2.push(ind);
+		}
+		
+		console.log(arr);
+		console.log(arr2);
+		
+	</script>
+	
+</body>
+</html>

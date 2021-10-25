@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			17) Все элементы массива поделить на значение наибольшего элемента этого массива.
+		*/
+		function getCompar(a, b) {
+			if (a > b) return 1; // если первое значение больше второго
+			if (a == b) return 0; // если равны
+			if (a < b) return -1; // если первое значение меньше второго
+		}
+		function getRand(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
+		}
+
+		var arr = [],
+			rand,
+			summ = 0,
+			biggest;
+		
+		for (var i = 0; i < 20; i++) {
+			rand = getRand(0, 20);
+			arr.push(rand);
+		}
+		console.log(arr);
+		arr = [18, 18, 3, 19, 11, 14, 4, 13, 14, 5, 14, 20, 10, 2, 14, 11, 19, 8, 6, 1];
+		arr.sort(getCompar);
+		console.log(arr);
+		
+		biggest = arr.pop();
+		console.log('Наибольший элемент  ' + biggest);
+		
+		for (var ind of arr) {
+			summ += ind;
+		}
+		console.log('Сумма равна ' + summ);
+
+		// Если надо чтоб наибольшии элемент не включался в сумму всех элементов раскоментируите нижнюю строку
+		//summ = summ - biggest;
+
+		console.log('поделить на значение наибольшего элемента это ' + (summ / biggest));
+		
+		
+	</script>
+	
+</body>
+</html>

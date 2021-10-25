@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+			24) Дан массив A вещественного типа, содержащий 20 положительных и отрицательных элементов. Сформировать массив B из положительных элементов массива A, имеющих четный индекс. Найти сумму квадратов элементов нового массива.
+				*/
+            function getRandom(min, max) {
+                return Math.round(Math.random() * (max - min) + min);
+            }
+            var arrA = [],
+                arrB = [],
+                arrC = [],
+                rand,
+					 ind,
+					 summ = 0,
+					 square,
+					 summ2 = 0,
+					 arifm;
+
+            for (var i = 0; i < 20; i++) {
+					rand = getRandom(-30, 30);
+					arrA.push(rand);
+            }
+				console.log(arrA);
+
+				for (var j = 0; j < arrA.length; j += 2) {
+					ind = arrA[j];
+					if (ind > 0) {
+						arrB.push(ind);
+					}
+				}
+				console.log(arrB);
+
+				for (var k = 0; k < arrB.length; k++) {
+					square = arrB[k];
+					square *= square;
+					summ += square;
+				}
+
+				console.log(summ);
+				// 25) Получить среднее арифметическое всех чётных элементов массива, стоящих на нечётных местах.
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*
+			8) Требуется заполнить массив числами, которые вводит пользователь, и вычислить их сумму. Если пользователь вводит ноль или превышен размер массива, то запросы на ввод должны прекратиться.
+		*/
+
+		var arr = [], summ = 0, user;
+		for (var i = 0; arr.length < Math.pow(2,32)- 1; i++) {
+			user = +prompt('Enter number');
+			if (user === 0) break;
+			summ += user;
+			arr.splice(i, 1, user);
+		}
+		console.log('summ is ' + summ);
+		console.log(arr);
+		
+	</script>
+</body>
+</html>

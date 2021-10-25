@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			23) Дан одномерный массив. Найти среднее арифметическое его элементов. Вывести на экран только те элементы массива, которые больше найденного среднего арифметического.
+		*/
+		var arr = [], user, summ = 0, arif, arr2 = [], count = 0;
+
+		
+		while (1 > 0) {
+			user = +prompt('Enter number ')
+			if (user != Number(user)) break;
+			arr.push(user);
+			count++;
+		}
+		console.log(arr);
+
+		for (var ind of arr) {
+			summ += ind;
+		}
+		console.log(summ);
+
+		arif = summ / arr.length;
+		console.log(arif);
+		
+		for (var ind2 of arr) {
+			if (ind2 > arif) {
+				arr2.push(ind2);
+			}
+		}
+		console.log(arr2);
+		
+	</script>
+</body>
+</html>

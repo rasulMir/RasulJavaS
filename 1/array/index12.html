@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			12) Заполнить массив из 10 элементов случайными числами в интервале [0..4] и определить, есть ли в нем одинаковые соседние элементы.
+		*/
+		function getRand(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
+		}
+		var arr = [], count = 0, rand, first, second, sameCount = 0;
+		for (var i = 0; i < 10; i++) {
+			rand = getRand(.1, 4);
+			arr.push(rand);
+		}
+		console.log(arr);
+		for (var ind = 1; ind <= 10; ind++) {
+			second = arr[ind];
+			first = arr[count];
+			if (first === second) {
+				sameCount++;
+			}
+			count++;
+		}
+		console.log(sameCount);
+		
+		
+	</script>
+</body>
+</html>

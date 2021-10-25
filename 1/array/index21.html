@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+				21) Найти сумму тех элементов массива, которые одновременно имеют четные и отрицательные значения.Например, в массиве [3, -5, -2, 4, -8, 0] отрицательными четными элементами являются числа -2 и -8. Их сумма равна -10.
+				*/
+
+            var arr = [],
+					arr2 = [],
+					summ = 0,
+					even,
+					rand;
+				function getRandom(min, max) {
+					return Math.round(Math.random() * (max - min) + min);
+				}
+				function getCompar(a, b) {
+					if (a > b) return 1; // если первое значение больше второго
+					if (a == b) return 0; // если равны
+					if (a < b) return -1; // если первое значение меньше второго
+				}
+
+				for (var j = 0; j < 20; j++) {
+					rand = getRandom(-50, 50);
+					arr.push(rand);
+				}
+				console.log(arr);
+
+				/*
+					22) В массиве найти минимальное значение среди элементов с нечетными индексами.
+				*/
+				for (var i = 0; i < arr.length; i++) {
+					arr[i]
+					if (arr[i] < 0 && arr[i] % -2 != 0) {
+						summ += arr[i];
+						arr2.push(arr[i]);
+					}
+				}
+				console.log(arr2);
+
+				arr2.sort(getCompar);
+				console.log(arr2[0]);
+				
+				
+        </script>
+    </body>
+</html>

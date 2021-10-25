@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			10) В одномерном массиве (заполнение массива случайными числами от -50 до 49) найти сумму отрицательных элементов. Если эта сумма меньше -100, то необходимо прибавить к ней минимальный положительный элемент.
+		*/
+
+		function getRandom(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
+		}
+		function getCompare(a, b) {
+			return a - b;
+		}
+
+		var arr = [],arr2 = [], sum = 0, rand, max = 10, count = 0, minNumb;
+
+		while (count < max) {
+			rand = getRandom(-50, 49);
+			arr.push(rand);
+			if ( rand < 0 ) {
+				sum += rand;
+			}
+			count++;
+		}
+		console.log(arr);
+		console.log('Сумма отрицательных значений ' + sum);
+		for (var ind of arr) {
+			if (ind > 0) {
+				arr2.push(ind);
+			}
+		}
+		minNumb = arr2.sort(getCompare);
+		console.log(minNumb);
+		
+
+		if (sum > -100) {
+			console.log('Сумма отрицательных значений меньше -100! Прибавляем к сумме минимальный положительный элемент ' + minNumb[0] + ' Равно ' + (sum + minNumb[0]));
+			
+		}
+		
+		
+		
+
+	</script>
+</body>
+</html>

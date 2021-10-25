@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+			11) Дан массив из N элементов в диапазоне [100;300]. Сжать массив, оставив в нем только те элементы, сумма цифр которых четная.
+		*/
+
+		function getRandom(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
+		}
+
+		var arr = [], arr2 = [], rand = getRandom(100, 300), arrLeng = 20, summ = 0,nexNum = 0, ind2;
+
+		console.log(arrLeng);
+
+		for (var i = 0; i < arrLeng; i++) {
+			rand = getRandom(100, 300);
+			arr.splice(i, 1, rand);
+		}
+		console.log(arr);
+
+		for (var ind of arr) {
+			ind2 = ind;
+			do {
+				nexNum = ind2 % 10;
+				ind2 = parseInt(ind2 / 10);
+				summ += nexNum;
+			}
+			while (ind2 > 0);
+			
+			if (summ % 2 === 0) {
+				arr2.push(ind);
+			}
+				summ = 0;
+		}
+		console.log(arr2);
+		
+
+	</script>
+</body>
+</html>
