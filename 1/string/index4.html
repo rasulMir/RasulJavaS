@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*4) Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы. Например, если было введено "abc cde def", то должно быть выведено "abcdef".
+		*/
+		var str = prompt('Enter word ') ,arr = [];
+		function getStr() {
+			arr = str.split(' ');
+			str = arr.join('');
+			arr = str.split('');
+
+			for (var ind = 0; ind < arr.length; ind++) {
+				for (var i = arr.length; i > ind; i--) {
+					if (arr[ind] === arr[i]){ arr.splice(i,1); }
+				}
+			}
+
+			str = arr.join('');
+			return console.log(str);
+		}
+
+		if (str === String(str)) {
+			getStr();
+		}
+		else {
+			console.log('You not entered word ');
+		}
+		
+	</script>
+</body>
+</html>

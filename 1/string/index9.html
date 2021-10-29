@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		9) Вводятся строки. Определить самую длинную строку и вывести ее номер на экран. Если самых длинных строк несколько, то вывести номера всех таких строк.
+		*/
+		/*
+		var current, last = 0, max = 0, count = 0, maxest = 0;
+
+		while (count < 10) {
+			current = +prompt('Enter pupils scores ');
+			if (last < current) { max = current; }
+			if (max > maxest) { maxest = max; }
+			last = current;
+			count++;
+		}
+		console.log('лучший результат - ' + maxest + ' очков');*/
+		var user = 'rasul dsdsdssdds rsl djd slambsaaii',longest = '', last = '', max = '', str = '';
+		user = user.split(' ');
+		console.log(user);
+
+		for (var i = 0; i < user.length; i++) {
+			if (last.length < user[i].length) { max = user[i]; }
+			if (max.length > longest.length) { longest = max; str += user[i]; }
+			if (user[i].length === longest.length) { str = longest + ' ' + user[i]; }
+			last = user[i]
+		}
+		console.log(str);
+		console.log(longest);
+	</script>
+</body>
+</html>

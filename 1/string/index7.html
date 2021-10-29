@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*7) Вводится строка слов, разделенных пробелами. Найти самое длинное слово и вывести его на экран. Случай, когда самых длинных слов может быть несколько, не обрабатывать.
+		*/
+		user = 'Enter word dsdsss ds', longest = 0, i = 1, max = 0;
+		user = user.split(' ');
+		console.log(user);
+		while (i < user.length) {
+			if (user[i - 1].length < user[i].length) { longest = user[i] }
+			i++;
+		}
+		console.log(longest);
+
+		/*
+		var current, last = 0, max = 0, count = 0, maxest = 0;
+
+		while (count < 10) {
+			current = +prompt('Enter pupils scores ');
+			if (last < current) { max = current; }
+			if (max > maxest) { maxest = max; }
+			last = current;
+			count++;
+		}
+		console.log('лучший результат - ' + maxest + ' очков');*/
+		
+	</script>
+</body>
+</html>

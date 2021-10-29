@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*10) Посчитать количество строчных (маленьких) и прописных (больших) букв в введенной строке. Учитывать только английские буквы.*/
+		var user = prompt('Enteer word '), lowerCase = 0, upperCase = 0;
+		user = user.split('');
+		console.log(user);
+		
+		for (var ind of user) {
+			if (ind >= 'A' && ind <= 'Z') { upperCase++; }
+				else if ( ind >= 'a' && ind <= 'z') { lowerCase++; }
+				else { console.log('Вы ввели не строку '); break;}
+		}
+		console.log('Количество прописных букв ' + upperCase + '\nКоличество строчных букв ' + lowerCase);
+		
+		
+
+		
+	</script>
+</body>
+</html>

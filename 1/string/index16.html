@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*16) Дана переменная str, в которой хранится какой-либо текст. Реализуйте обрезание длинного текста по следующему принципу: если количество символов этого текста больше заданного в переменной n, то в переменную result запишем первые n символов строки str и добавим в конец троеточие '...'. В противном случае в переменную result запишем содержимое переменной str.*/
+
+		var str = prompt('Enter word '), n = 5, result = '';
+		if ( str.length > n ) {
+			str = str.split('');
+			for (var i = 0; i < n; i++) {
+				result += str.shift(i);
+			}
+			result += '...';
+			console.log(result);
+		}
+	</script>
+</body>
+</html>

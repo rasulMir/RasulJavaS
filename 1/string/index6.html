@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		6) Вводится строка, содержащая буквы, целые неотрицательные числа и иные символы. Требуется все числа, которые встречаются в строке, поместить в отдельный целочисленный массив. Например, если дана строка "data 48 call 9 read13 blank0a", то в массиве должны оказаться числа 48, 9, 13 и 0.
+		*/
+		function getNumbers() {
+			var user = "data 48 call 9 read13 blank0a", arr = [], meth, temp, str, meth2;
+			user = user.trim().split(' ');
+
+			for (var i = 0; i < user.length; i++) {
+				temp = user[i].split('');
+				user.splice(i, 1, temp);
+			}
+			
+			for (var j = 0; j < user.length; j++) {
+				for (var k = 0; k < user[j].length; k++) {
+					meth = Number(user[j][k]);
+					if (isNaN(meth)) {
+						user[j].splice(k, 1, undefined);
+					}
+					else { continue };
+				}
+				str += user[j].join('') + ' ';
+			}
+			str = str.trim().split(' ');
+
+			for (var c = 0; c < str.length; c++) {
+				if (str[c] === 'undefined' || str[c] === '') {
+					str.splice(c, 1);
+				}
+				else { continue };
+			}
+			console.log(str);
+		}
+
+		getNumbers();
+		
+	</script>
+</body>
+</html>
