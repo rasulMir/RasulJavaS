@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*5) Дана функция ggg. Она требует первым параметром число, вторым функцию, которая возводит в квадрат, а третьим параметром функцию, которая возводит в куб. Эти функции есть как Function Declaration - kvadrat, kub. Пусть функция ggg вернет сумму квадрата и куба числа*/
+		function ggg(num = 0, kv, kb) {
+			return kv(num) + kb(num);
+		}
+
+		function kv(num) {
+			return num * num;
+		}
+
+		function kb(num) {
+			return num ** 3;
+		}
+
+		console.log(ggg(3, kv, kb));
+		
+	</script>
+</body>
+</html>
