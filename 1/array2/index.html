@@ -15,7 +15,31 @@
 		1 1 0 1 1
 		0 1 1 1 0
 		1 0 1 0 1*/
-		
+
+		var arr = [], elem = 0, innerArr = [];
+
+		while (arr.length < 5) {
+			innerArr.length = 0;
+			for (var i = 0; i < 5; i++) {
+				if (arr.length === 0 || arr.length === 4) {
+					if (innerArr.length % 2 === 0) { innerArr.push(elem + 1); }
+					else { innerArr.push(elem); }
+					if (i === 4) { arr.push(innerArr); }
+				}
+				if (arr.length === 1 || arr.length === 3) {
+					if (innerArr.length !== 0 || innerArr.length !== 4) { innerArr.push(elem + 1); }
+					else { innerArr.push(elem); }
+					if (i === 4) { arr.push(innerArr); }
+				}
+				if (arr.length === 2) {
+					if (innerArr.length !== 2) { innerArr.push(elem + 1); }
+					else { innerArr.push(elem); }
+					if (i === 4) { arr.push(innerArr); }
+				}
+			}
+		}
+
+		console.log(arr);
 	</script>
 </body>
 </html>

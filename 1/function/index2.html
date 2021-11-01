@@ -9,7 +9,7 @@
 <body>
 	<script>
 		/*2) Напиши функцию partial(fn, a1, a2, ....), которая позволяет зафиксировать один или несколько аргументов функции.
-		
+
 		Пример:
 		function add(a, b) { return a + b; }
 		function mult(a, b, c, d) { return a * b * c *8; }
@@ -29,7 +29,7 @@
 			return fn;
 		}
 
-		function mult(arguments) {
+		function mult() {
 			var ind = 0;
 			for (var i = 0; i < arguments.length; i++) {
 				ind *= arguments[i];
