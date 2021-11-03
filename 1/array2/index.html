@@ -8,38 +8,18 @@
 </head>
 <body>
 	<script>
-		/*21) Создайте массив int A[5][5] и выведите его на экран следующим образом
-		
-		1 0 1 0 1
-		0 1 1 1 0
-		1 1 0 1 1
-		0 1 1 1 0
-		1 0 1 0 1*/
-
-		var arr = [], elem = 0, innerArr = [];
-
-		while (arr.length < 5) {
-			innerArr.length = 0;
-			for (var i = 0; i < 5; i++) {
-				if (arr.length === 0 || arr.length === 4) {
-					if (innerArr.length % 2 === 0) { innerArr.push(elem + 1); }
-					else { innerArr.push(elem); }
-					if (i === 4) { arr.push(innerArr); }
-				}
-				if (arr.length === 1 || arr.length === 3) {
-					if (innerArr.length !== 0 || innerArr.length !== 4) { innerArr.push(elem + 1); }
-					else { innerArr.push(elem); }
-					if (i === 4) { arr.push(innerArr); }
-				}
-				if (arr.length === 2) {
-					if (innerArr.length !== 2) { innerArr.push(elem + 1); }
-					else { innerArr.push(elem); }
-					if (i === 4) { arr.push(innerArr); }
-				}
-			}
+		/*17) Дано число n. Создайте массив int A[n][n], и заполните его по следующему правилу: числа на диагонали, идущей из правого верхнего в левый
+		нижний угол равны 1; числа, стоящие выше этой диагонали, равны 0;
+		числа, стоящие ниже этой диагонали, равны 2.
+		0 0 0 1
+		0 0 1 2
+		0 1 2 2
+		1 2 2 2*/
+		function getRandom(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
 		}
+		
 
-		console.log(arr);
 	</script>
 </body>
 </html>

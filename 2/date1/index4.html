@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		/*4) Выведите на экран текущую дату-время в формате '12:59:59 31.12.2014'. Для решения этой задачи напишите функцию, которая будет добавлять 0 перед днями и месяцами, которые состоят из одной цифры (из 1.9.2014 сделает 01.09.2014)*/
+
+		function createZero(num) {
+			return '0' + num;
+		}
+
+		function getRound(date) {
+			return Math.round(date * 24 * 3600 * 1000);
+		}
+
+		var date = new Date();
+
+		console.log();
+
+	</script>
+</body>
+</html>

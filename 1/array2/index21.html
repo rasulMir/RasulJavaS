@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*21) Создайте массив int A[5][5] и выведите его на экран следующим образом
+		
+		1 0 1 0 1
+		0 1 1 1 0
+		1 1 0 1 1
+		0 1 1 1 0
+		1 0 1 0 1*/
+
+		var arr = [], innerArr = [], count = 0, currArr;
+
+		while (arr.length < 5) {
+			innerArr.length = 0;
+			innArr: for (var i = 0; i < 5; i++) {
+
+				if (arr.length === 0 || arr.length === 4 || false) {
+					(innerArr.length % 2 === 0) ? innerArr.push(1) : innerArr.push(0);
+				}
+
+				if (arr.length === 1 || arr.length === 3 || false) {
+					(innerArr.length === 0 || innerArr.length === 4) ? innerArr.push(0) : innerArr.push(1);
+				}
+
+				if (arr.length === 2 || false) {
+					(innerArr.length !== 2) ? innerArr.push(1) : innerArr.push(0);
+				}
+			}
+			currArr = innerArr.slice();
+			if (innerArr.length === 5) {
+				arr.push(currArr);
+			}
+		}
+
+		console.log(arr);
+		
+	</script>
+</body>
+</html>
