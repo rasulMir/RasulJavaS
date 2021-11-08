@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var family = {
+			surname : "Smith",
+			address : "west jumamuratov 52",
+		};
+		var father = {
+			name : "John",
+			dateOfBirth : 1990,
+		};
+		var mother = {
+			name : "Melinda",
+			dateOfBirth : 1990,
+		};
+		var son = {
+			name : "Arnold",
+			dateOfBirth : 2015,
+		};
+		father.__proto__ = family;
+		mother.__proto__ = family;
+		son.__proto__ = family;
+		console.log(father.surname);
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*13) Есть дата например 31.12.2013. Реализуйте средствами языка JavaScript скрипт, который будет вычислять сколько осталось дней, месяцев, лет до этой даты.*/
+		var d = new Date(2033, 12,31), t = Date.now(), equal, days, month, years;
+		if (d > t) { equal = d - t }
+		else if (t > d) { equal = t - d }
+		days = equal / 86400000;
+		month = days / 30;
+		years = month / 12;
+		console.log('days ' + days + ' month ' + month + ' years ' + years);
+		
+	</script>
+</body>
+</html>

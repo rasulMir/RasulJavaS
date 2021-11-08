@@ -12,16 +12,27 @@
 		/*4) Выведите на экран текущую дату-время в формате '12:59:59 31.12.2014'. Для решения этой задачи напишите функцию, которая будет добавлять 0 перед днями и месяцами, которые состоят из одной цифры (из 1.9.2014 сделает 01.09.2014)*/
 
 		function createZero(num) {
-			return '0' + num;
+			if (num < 10) { return '0' + num; }
+			else { return num }
 		}
 
-		function getRound(date) {
-			return Math.round(date * 24 * 3600 * 1000);
+		function showDate(dat) {
+			
+			var second = createZero(dat.getSeconds()),
+			minute = createZero(dat.getMinutes()),
+			hours = createZero(dat.getHours()),
+			day = createZero(dat.getDate()),
+			month = createZero(dat.getMonth()),
+			year = dat.getFullYear(),
+			strDate = '', strTime = '';
+			strTime = hours + ':' + minute + ':' + second;
+			strDate = day + '.' + month + '.' + year;
+
+			return strTime + ' ' + strDate;
 		}
+		var date = new Date(2014, 9, 1, 12, 9, 59);
 
-		var date = new Date();
-
-		console.log();
+		console.log(showDate(date));
 
 	</script>
 </body>

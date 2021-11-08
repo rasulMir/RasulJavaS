@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*8) Выведите на экран количество часов, прошедшее между 1 марта 1988 года и текущим моментом с помощью Date.parse*/
+		function getHours(num) {
+			var H = Math.round(num / 3600000);
+			return H;
+		}
+		var last = Date.parse('1988-03-01'),
+		now = new Date().getTime();
+		between = now - last;
+		console.log(getHours(between));
+		
+	</script>
+</body>
+</html>

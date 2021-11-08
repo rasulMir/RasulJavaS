@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*6) Выведите на экран текущий день недели (словом, по-русски). Создайте для этого вспомогательную функцию showDay, которая параметром принимает число, а возвращает день недели по-русски*/
+		function showWeekDay(num) {
+			var weekDays = [
+				'Воскресенье',
+				'Понедельник',
+				'Вторник',
+				'Среда',
+				'Четверг',
+				'Пятница',
+				'Суббота',
+			]
+			if (num < 8) { return weekDays[num]; }
+			else { return 'Ты ввел номер больше 7 '}
+		}
+		var date = new Date();
+		console.log(showWeekDay(date.getDay()));
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var building = {
+			location : "Satpaev 145",
+			name : "Marriot hotel",
+			"number of storeys" : 10,
+			squareMeters : 10000,
+			owner : "Marriot LLC",
+			apartments : [
+				"President luxe",
+				"Luxe",
+				"Economy",
+				"Simple",
+			],
+			prices : [
+				1000,
+				800,
+				500,
+				200,
+			],
+			orderApartment() {
+				function getDays(num) {
+					var H = Math.round(num / 86400000);
+					return H;
+				}
+				var settling = prompt('Enter settling date [YYYY-MM-DD]', ''),
+				exit = prompt('Enter exit date [YYYY-MM-DD]', ''),
+				price = prompt(`${building.apartments}  Choose by entered number`, ''),
+				days;
+				settling = getDays(Date.parse(settling));
+				exit = getDays(Date.parse(exit));
+				days = exit - settling;
+				return days * building.prices[price - 1] + ' U.S Dollars';
+			}
+		};
+
+		console.log(building.orderApartment());
+		
+	</script>
+</body>
+</html>

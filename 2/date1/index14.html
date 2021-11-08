@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*14) Написать скрипт: Определение количества времени, которое прошло между двумя датами*/
+		var first = Date.parse(prompt('Введите дату формате гггг-мм-дд ', ' ')),
+		second = Date.parse(prompt('Введите дату формате гггг-мм-дд ', ' ')),
+		equal, sec, minute, hour, day, month, years;
+
+		if (second > first) { equal = second - first }
+		else if (first > second) { equal = first - second }
+		sec = equal / 1000;
+		minute = sec / 60;
+		hour = minute / 60;
+		day = hour / 24;
+		month = day / 30;
+		years = day / 365;
+		console.log('секунд ' + sec + 'минут ' + minute + 'часов ' + hour + 'дней ' + day + 'месяцев ' + month + 'лет ' + years);
+		
+
+	</script>
+</body>
+</html>

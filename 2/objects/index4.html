@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var teacher = {
+			gender : 'male',
+			name : "Niyetbay",
+			secondName : "Azerbaevich",
+			surname : "Jangabaev",
+			subject : "Russian language",
+			salary : 1500000,
+		};
+		var teacher2 = {
+			gender : 'female',
+			name : "Zhanna",
+			secondName : "Alisherovna",
+			surname : "Jangabaeva",
+			subject : "English language",
+			salary : 2500000,
+		};
+
+		function TeachersData(teacher) {
+			this.gender = teacher.gender;
+			this.name = teacher.name;
+			this.secondName = teacher.secondName;
+			this.surname = teacher.surname;
+			this.subject = teacher.subject;
+			this.salary = teacher.salary;
+
+			this.showSalary = function() {
+				return this.salary;
+			}
+		}
+
+		var niyet = new TeachersData(teacher);
+
+		console.log(niyet);
+
+		var zhanna = new TeachersData(teacher2);
+
+		console.log(zhanna);
+		
+		console.log(zhanna.showSalary());
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*10) Выведите на экран количество секунд, которое осталось до конца дня.*/
+		function calcUnix(num, time) {
+			return Math.round(num / time)
+		}
+		var now = calcUnix(Date.now(), 1000),
+		beforeEnd = calcUnix(new Date().setHours(23,59,59,9999), 1000);
+		console.log(beforeEnd - now);
+		
+	</script>
+</body>
+</html>
