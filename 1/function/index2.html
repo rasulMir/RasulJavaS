@@ -24,20 +24,25 @@
 
 		console.log(mult23(4, 5)); // 2*3*4*5 = 120
 		console.log(mult23(1, 1)); // 2*3*1*1 = 6*/
-
+		
+		var sum = 0;
 		function partial(fn, arguments) {
+			sum = arguments[0];
+			for (var i = 1; i < arguments.length; i++) {
+				sum *= arguments[i];
+			}
 			return fn;
 		}
 
-		function mult() {
-			var ind = 0;
-			for (var i = 0; i < arguments.length; i++) {
-				ind *= arguments[i];
+		function mult(arguments) {
+			for (var k = 0; k < arguments.length; k++) {
+				sum *= arguments[i];
 			}
-			return ind;
-		}
+			return sum;
+		};
 
 		var mult23 = partial(mult, 2, 3);
+		
 
 		console.log(mult23(4, 5)); // 2*3*4*5 = 120
 
