@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*5) В приведённом ниже коде запланирован вызов setTimeout, а затем выполняется сложное вычисление, для завершения которого требуется более 100 мс.
+
+		Когда будет выполнена запланированная функция?
+
+		После цикла.
+		Перед циклом.
+		В начале цикла.
+		Что покажет alert?
+
+		// предположим, что время выполнения этой функции >100 мс
+		*/
+		// меним жуабым learnJS кормеи турип жазп атирман
+		// перед циклом
+
+		// alert покажет 0
+
+		// текущии код деген не екен сора
+		
+		let i = 0;
+
+		setTimeout(() => console.log(i), 100);
+
+		for(let j = 0; j < 100000000; j++) {
+			i++;
+		}
+	</script>
+</body>
+</html>
