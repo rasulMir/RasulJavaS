@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*2)  Создать класс Person, который содержит: 
+			a) поля fullName, age. 
+			б) методы move() и talk(), в которых просто вывести на консоль сообщение -"Такой-то  Person говорит". 
+			в) Добавьте два конструктора  - Person() и Person(fullName, age).
+			Создайте два объекта этого класса. Один объект инициализируется конструктором Person(), другой - Person(fullName, age).
+			=============================================*/
+		
+		class Person {
+			fullName
+			age
+			constructor (fullName, age) {
+				this.fullName = fullName;
+				this.age = age;
+			}
+			Person(fullName, age) {
+				this.fullName = fullName;
+				this.age = age;
+			}
+			move () {
+				console.log('move');
+			}
+			talk() {
+				console.log('talk');
+			}
+		}
+
+		var obj2 = new Person();
+		obj2.Person("karamat", 25);
+		console.log(obj2);
+
+		var obj1 = new Person("rasul", 24);
+		console.log(obj1);
+
+	</script>
+</body>
+</html>
