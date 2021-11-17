@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*8) создайте счетчик. В счетчике должно быть: 1) Метод обнуление счетчика. 2) Возможность изменять начало отчета счетчика.*/
+		function counter () {
+			var count = 0;
+			return function func() {
+				func.zero = function() {
+					count = 0;
+				}
+				func.changeStart = function(num) {
+					count = num;
+				}
+				return count++;
+			}
+		}
+		var a = counter();
+		console.log(a());
+		console.log(a());
+		console.log(a());
+		a.zero();
+		console.log(a());
+		console.log(a());
+		console.log(a());
+		a.changeStart(5);
+		console.log(a());
+		console.log(a());
+		console.log(a());
+	</script>
+</body>
+</html>
