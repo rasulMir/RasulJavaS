@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 1
+		const sequence = (start = 0, step = 1) => {
+			var count = start;
+			return () => {
+				count += step;
+				return count - step;
+			}
+		}
+		var generator = sequence(10, 3);
+		var generator2 = sequence(7, 1);
+		console.log(generator()); // 10
+		console.log(generator()); // 13
+		console.log(generator()); // 16
+		console.log(generator2()); // 7
+		console.log(generator2()); // 8
+		console.log(generator2()); // 9
+
+		// 2
+		const summ = (num) => {
+			var nextNum, sum = 0, count = 0;
+			iter: while (num > 9) {
+				count++;
+				for (var i = 0; num > 0; i++) {
+					nextNum = num % 10;
+					num = parseInt(num / 10, 10);
+					sum += nextNum;
+					if (sum > 9 && num === 0) { num = sum; sum = 0; continue iter;}
+				}
+			}
+			console.log(`Круг ${count}, Сумма последнего суммирования ${sum}`);
+		}
+		summ(8889);
+		summ(88);
+		// 3
+		const ggg = (a, b) => a() + b();
+		console.log(ggg(() => 3, () => 4));
+		// 4
+		const ggg2 = (num = 0, kv, kb) => kv(num) + kb(num);
+		const kvf = (num) => num * num;
+		const kbf = (num) => num ** 3;
+		console.log(ggg2(5, kvf, kbf));
+		// 5
+		const sum2 = (num) => ((num2) => num + num2);
+		console.log(sum2(1)(2));
+		console.log(sum2(5)(-1));
+		// 6
+		var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+		function inBetween(a, b) {
+			return (currElem) => (a <= currElem && currElem <= b);
+		}
+		
+		var newArr2 = arr.filter(inBetween(5,8));
+		console.log(newArr2);
+		// 7
+		const inArray = (a) => {
+			return (currElem) => {
+				count : for (var i = 0; i < a.length; i++) {
+					if (currElem === a[i]) {
+						return true;
+					}
+					else {
+						continue count;
+					}
+				}
+			}
+		}
+		var newArr = arr.filter(inArray([7,3,5]));
+		console.log(newArr);
+		// 8
+		const makePassword = (pass) => {
+			var str = '12345';
+			return (str === pass);
+		}
+		console.log(makePassword('12345'));
+		// 9
+		const addition = (n) => (n2) => n2 + n;
+		var s = addition(5);
+		console.log(s(6));
+		// 10
+		const counter = () => {
+			var count = 0;
+			return function func() {
+				func.zero = () => count = 0;
+				func.changeStart = (num) => count = num;
+				return count++;
+			}
+		}
+		
+		var a = counter();
+		console.log(a());
+		console.log(a());
+		console.log(a());
+		a.zero();
+		console.log(a());
+		console.log(a());
+		console.log(a());
+		a.changeStart(5);
+		console.log(a());
+		console.log(a());
+		console.log(a());
+		// 11
+		
+	</script>
+</body>
+</html>
