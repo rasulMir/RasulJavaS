@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*3) Создать класс "Матрица". Класс должен иметь следующие поля:
+		1) двумерный массив вещественных чисел;
+		2) количество строк и столбцов в матрице.
+
+		Класс должен иметь следующие методы:
+		1) сложение с другой матрицей;
+		2) умножение на число;
+		3) вывод на печать; 
+		4) умножение матриц - по желанию.
+		=================================================*/
+		class Matrix {
+			// 1) двумерный массив вещественных чисел;
+			arrDouble = [ 
+				[1,2,3,4,5],
+				[6,7,8,9,10]
+			]
+
+			// 2) количество строк и столбцов в матрице.
+			numStr = this.arrDouble.length;
+			numCol = this.arrDouble[0].length
+
+			// 1) сложение с другой матрицей;
+			calcMatrix(matrix) {
+				for (var key = 0; key < this.arrDouble.length; key++) {
+					for (var key2 = 0; key2 < this.arrDouble[key].length; key2++) {
+						this.arrDouble[key][key2] += matrix[key][key2];
+					}
+				}
+				return this.arrDouble;
+			}
+			
+			// 2) умножение на число;
+			multiNum(num) {
+				for (var key = 0; key < this.arrDouble.length; key++) {
+					for (var key2 = 0; key2 < this.arrDouble[key].length; key2++) {
+						this.arrDouble[key][key2] *= num;
+					}
+				}
+				return this.arrDouble;
+			}
+
+			// 4) умножение матриц - по желанию.
+			multiMatrix(matrix) {
+				for (var key = 0; key < this.arrDouble.length; key++) {
+					for (var key2 = 0; key2 < this.arrDouble[key].length; key2++) {
+						this.arrDouble[key][key2] *= matrix[key][key2];
+					}
+				}
+				return this.arrDouble;
+			}
+		}
+		let a = new Matrix();
+		console.log(a.calcMatrix(a.arrDouble));
+
+		
+		let b = new Matrix();
+		console.log(b.multiNum(5));
+
+		let c = new Matrix();
+		console.log(c.multiMatrix(c.arrDouble));
+		
+	</script>
+</body>
+</html>
