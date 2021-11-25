@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*1)  Дан массив. Запишите первый элемент этого массива в переменную elem1, второй - в переменную elem2, третий - в переменную elem3, а все остальные элементы массива - в переменную arr. */
+		let array = ["elem1", "elem2", "elem3", "arr", "arr", "arr", "arr", ];
+		let [elem1, elem2, elem3, ...arr] = array;
+		console.log(`${elem1}\n${elem2}\n${elem3}\n${arr}`);
+		
+	</script>
+</body>
+</html>

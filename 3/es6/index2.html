@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*2)  Дан массив. Запишите последний элемент этого массива в переменную elem1, а предпоследний - в переменную elem2.*/
+		let arr = [1,2,3,4,5,6,"elem1","elem2"];
+		let [,,,,,,elem1,elem2] = arr;
+		console.log(elem1, elem2);
+	</script>
+</body>
+</html>

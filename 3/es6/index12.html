@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div class="elem">
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam est doloribus harum tempora dicta aspernatur eos ratione minima voluptate, aliquam, libero velit cum. Distinctio a magni sint incidunt sequi inventore.
+	</div>
+	<div class="elem2">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis maxime minima iure recusandae, voluptatibus natus atque eaque in quae dolore quas alias. Doloribus suscipit quaerat corrupti ut quibusdam, quisquam et.
+	</div>
+	<script>
+		/*12)  Дан объект с настройками, например, {id: 'elem', color: 'blue', border: '1px solid red', font: '15px Arial'}. Сделайте функцию, которая получает этот объект, извлекает из него все настройки в соответствующие переменные и для элемента с указанным id (в нашем случае это 'elem') ставит заданные CSS свойства. В объекте могут быть только эти ключи, однако, какой-либо ключ (кроме id) может быть не задан - в этом случае пусть возьмутся следующие значения по умолчанию: color: 'blue', border: '1px solid red', font: '15px Arial'.*/
+		const settings = {id: 'elem', color: 'blue', border: '1px solid red', font: '15px Arial'};
+		const settings2 = {id: 'elem2', color: 'red', border: '15px solid green', font: '15px Roboto'};
+		function cssMixin(elem) {
+			let {id = 'elem', color = 'blue', border = '1px solid red', font = '15px Arial'} = elem;
+			let idd = document.querySelector(`.${id}`);
+			return (
+				idd.style.color = color,
+				idd.style.border = border,
+				idd.style.font = font
+			)
+		}
+		console.log(cssMixin(settings));
+		cssMixin(settings2);
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*10) Дана строка. С помощью for-of подсчитайте количество букв 'о' в ней.*/
+		let str = "hOhohohOoo";
+		let letterCounter = (str) => {
+			let count = 0;
+			let str2 = str.toLowerCase();
+			for (let val of str2) {
+				if (val === "o") count++;
+			}
+			return count;
+		};
+		console.log(letterCounter(str));
+	</script>
+</body>
+</html>

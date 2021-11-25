@@ -23,36 +23,28 @@
             			count++;
             	}, 1000);
 
-            	var stop = setTimeout(function() {
-            		return clearInterval(inter);
-            	}, to - from);
+            	var stop = setTimeout( () => clearInterval(inter), to - from);
             }
-            // printNumbers(2,8);
+            printNumbers(2,8);
 
             function printNumbersTimeout(from, to) {
-					if (from < to) {
-						function count() {
-							var timeout = setTimeout(count, 1000);
-							if (from !== to + 1) {
-								console.log(from);
-								++from;
+							if (from < to) {
+								function count() {
+									var timeout = setTimeout(count, 1000);
+									if (from !== to + 1) {
+										console.log(from);
+										++from;
+									}
+									else clearTimeout(timeout);
+								}
+								return count;
 							}
 							else {
-								clearTimeout(timeout);
+								return () => console.log('BaNaNa');
 							}
-						}
-						return count;
-					}
-					else {
-						return (
-							function () {
-								console.log('BaNaNa')
-							}
-						);
-					}
             }
 				var a = printNumbersTimeout(-6,5);
-				a();
+				//a();
         </script>
     </body>
 </html>
