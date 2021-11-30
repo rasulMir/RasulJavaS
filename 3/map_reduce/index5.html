@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*5) Дан массив с числами. Проверьте то, что в нем есть отрицательные элементы*/
+		function getArr(min, max, length){
+			let getRand = () => Math.round(Math.random() * (max - min) + min);
+			let arr = [];
+			for (let i = 0; i < length; i++) arr.push(getRand());
+			return arr;
+		}
+
+		let arr = getArr(-10, 10, 10);
+		console.log(arr);
+		let newArr = arr.find(elem => elem <= 0);
+		console.log(newArr);
+	</script>
+</body>
+</html>

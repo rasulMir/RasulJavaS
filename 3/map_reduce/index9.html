@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*9) Дан массив, в нем могут быть обычные элементы и подмассивы, например [1, 2, [3, 4], 5, [6, 7]]. Оставьте в нем только подмассивы*/
+		let subArr = [1, 2, [3, 4], 5, [6, 7, 8], 9, [10, 11], [[1,1,1], {name : "rasul", surname : "Mirzakulov"}]];
+		console.log(subArr);
+		
+		let filteredArr = subArr.filter(elem => Array.isArray(elem));
+		console.log(filteredArr);
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*14) Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось больше 10-ти)*/
+		function getArr(min, max, length){
+			let getRand = () => Math.round(Math.random() * (max - min) + min);
+			let arr = [];
+			for (let i = 0; i < length; i++) arr.push(getRand());
+			return arr;
+		}
+
+		const arr = [3, 5, 5, 4, 3, 1, 4, 3, 2, 4];
+		console.log(arr);
+		
+		let sum = arr.forEach((elem, index) => {
+			let a = 0;
+			a += elem;
+			if (a > 10) return index;
+			return a;
+		});
+		console.log(sum);
+		
+	</script>
+</body>
+</html>
