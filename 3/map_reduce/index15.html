@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*15)  Дан массив с числами. Оставьте в нем только положительные числа. Затем извлеките квадратный корень и этих чисел*/
+		function getArr(min, max, length){
+			let getRand = () => Math.round(Math.random() * (max - min) + min);
+			let arr = [];
+			for (let i = 0; i < length; i++) arr.push(getRand());
+			return arr;
+		}
+
+		let arr = getArr(-50, 50, 10);
+		console.log(arr);
+
+		let newArr = arr.filter(elem => elem > 0).map(elem => elem * elem);
+		console.log(newArr);
+		
+		
+	</script>
+</body>
+</html>

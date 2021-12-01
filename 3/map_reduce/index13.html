@@ -9,21 +9,17 @@
 <body>
 	<script>
 		/*13)  Дан массив с числами. Найдите сумму последних N элементов до первого нуля с конца. Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем последние 3 элемента, так как дальше стоит элемент с числом 0.*/
+
 		let arr = [1, 2, 3, 0, 4, 5, 6];
 		console.log(arr);
-		
-		let newArr = arr.filter((elem, index) => {
-			let a = 0;
-			a += elem;
-			if (elem === 0) {
-				console.log(index);
-				return true;
-			}
-		});
 
-		console.log(newArr);
+		let sum = arr.reduce((summ, elem) => {
+			if (elem === 0) summ = 0;
+			return summ + elem;
+		});
+		console.log(sum);
 		
-	
+		
 	</script>
 </body>
 </html>

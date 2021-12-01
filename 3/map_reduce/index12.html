@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*12) Дан массив с числами. Найдите сумму первых N элементов до первого нуля. Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем первые 3 элемента, так как дальше стоит элемент с числом 0*/
+		let arr = [1, 2, 3, 0, 4, 5, 6];
+		console.log(arr);
+
+		let sum = arr.reduce((summ, elem, i, arr) => {
+			if (elem === 0) arr.splice(i);
+			return summ + elem;
+		});
+		console.log(sum);
+		
+	
+	</script>
+</body>
+</html>
