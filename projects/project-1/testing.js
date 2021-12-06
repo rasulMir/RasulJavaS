@@ -6,7 +6,7 @@ export const startTest = (arr) => {
 	let testLength = +prompt(`Сколько тестов хотите пройти?`, '');
 
 	for (let i = 0; i < testLength; i++) {
-		let rand = Math.round(Math.random() * (9 - 0) + 0) - i;
+		let rand = Math.floor(Math.random() * (9 - i));
 
 		let testAnswer = prompt(`${i + 1}. ${newArr[rand].qa}\n${newArr[rand].variants.a}\n${newArr[rand].variants.b}\n${newArr[rand].variants.c}\n${newArr[rand].variants.d}` , '');
 
