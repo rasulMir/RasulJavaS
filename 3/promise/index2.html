@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const functionsarr =  [
+			() => new Promise((res) => setTimeout(() => res('JavaScript'), 500)),
+			() => new Promise((res) => setTimeout(() => res('is the best'), 250)),
+			() => new Promise((res) => setTimeout(() => res('programming language'), 150)),
+		];
+		// setTimeout(function(){ return console.log('1')}, 500);
+		// setTimeout(function(){ return console.log('2')}, 300);
+		// setTimeout(function(){ return console.log('3')}, 200);
+
+		const handler = (arr, str = '') => {
+			if (!arr.length) return str.trim();
+			else {
+				let [curr, ...rest] = arr;
+				return curr().then(curr2 => handler(rest, `${str} ${curr2}`))
+			}
+		};
+		
+		handler(functionsarr).then((res) => {
+			console.log(res); 
+		});// JavaScrpt is the best programming language
+	</script>
+</body>
+</html>

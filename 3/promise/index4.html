@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 4) Есть недописаная функция "parallel(funcArray, doneAll)":
+            function parallel(funcArray, doneAll) {
+							let a = Promise.all(funcArray).then(a => a.reverse());
+							return doneAll(a);
+						}
+
+            var a = function (done) {
+                setTimeout(function () {
+                    done("result a");
+                }, 300);
+            };
+
+            var b = function (done) {
+                setTimeout(function () {
+                    done("result b");
+                }, 200);
+            };
+
+            parallel([a, b], function (results) {
+                console.log(results); 
+            });// ['result a', 'result b']
+            // Нужно её дописать. Что-то вроде аналога promise.all. И не забудьте, что результирующий массив должен сохранять тот порядок, в котором передавались функции.
+        </script>
+    </body>
+</html>
