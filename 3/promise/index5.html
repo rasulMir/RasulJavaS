@@ -8,7 +8,7 @@
     </head>
     <body>
         <script>
-            //		5) В каком порядке выведется консольлог и почему?
+            /* //		5) В каком порядке выведется консольлог и почему?
             console.log('1');
             setTimeout(function() {
               console.log('2')
@@ -18,7 +18,18 @@
 						// 1
 						// 4
 						// 3
-						// 2
+						// 2 */
+						
+						async function name(params) {
+							console.log('1');
+							console.log('4');
+							let a = await Promise.resolve('3');
+							console.log(a);
+							setTimeout(() => {
+								console.log('2');
+							}, 0);
+						}
+						name();
         </script>
     </body>
 </html>

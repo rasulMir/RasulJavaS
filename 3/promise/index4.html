@@ -8,28 +8,32 @@
     </head>
     <body>
         <script>
-            // 4) Есть недописаная функция "parallel(funcArray, doneAll)":
-            function parallel(funcArray, doneAll) {
-							let a = Promise.all(funcArray).then(a => a.reverse());
-							return doneAll(a);
-						}
-
+					// 4) Есть недописаная функция "parallel(funcArray, doneAll)":
+					// Нужно её дописать. Что-то вроде аналога promise.all. И не забудьте, что результирующий массив должен сохранять тот порядок, в котором передавались функции.
+            // function parallel(funcArray, doneAll) {
+						// 	let a = Promise.all(funcArray).then(a => a.reverse());
+						// 	return doneAll(a);
+						// }
             var a = function (done) {
                 setTimeout(function () {
                     done("result a");
                 }, 300);
             };
-
             var b = function (done) {
                 setTimeout(function () {
                     done("result b");
                 }, 200);
             };
-
+						async function parallel(funcArray, doneAll) {
+							let f = (r) => r;
+							let a = await funcArray[0](f);
+							let b = await funcArray[1](f);
+							let [...c] = [a, b];
+							return doneAll(c);
+						}
             parallel([a, b], function (results) {
                 console.log(results); 
             });// ['result a', 'result b']
-            // Нужно её дописать. Что-то вроде аналога promise.all. И не забудьте, что результирующий массив должен сохранять тот порядок, в котором передавались функции.
         </script>
     </body>
 </html>

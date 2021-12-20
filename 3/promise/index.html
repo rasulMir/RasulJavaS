@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const baseURL = 'https://api.sampleapis.com/cartoons/cartoons2D';
+		async function r(url) {
+			try {
+				let server = await fetch(url);
+				let jsoon = await server.json();
+				return jsoon;
+			}
+			catch(rej) {
+				return rej;
+			}
+		}
+		console.log(r(baseURL));
+	</script>
+</body>
+</html>

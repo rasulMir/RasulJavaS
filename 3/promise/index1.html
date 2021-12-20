@@ -9,25 +9,37 @@
 <body>
 	<script>
 		
-			// 1) что выведет код?  Объясните
-			var a = 5;
-			setTimeout(function timeout() {
-					console.log(a,'settimeout');
-					a = 10;
-			}, 0);
-			var p = new Promise(function(resolve, reject) {
-					console.log(a,'promise');
-					a = 25;
-					resolve();
-			});
-			p.then(function(){
-					// some code
-			});
-			console.log(a,'console');
-		// ответ
+			// 1) что выведет код?  Объясните// ответ
 		// 	5
 		// 	25
 		// 	25
+			var a = 5;
+			// setTimeout(function timeout() {
+			// 		console.log(a,'settimeout');
+			// 		a = 10;
+			// }, 0);
+			// var p = new Promise(function(resolve, reject) {
+			// 		console.log(a,'promise');
+			// 		a = 25;
+			// 		resolve();
+			// });
+			// p.then(function(){
+			// 		// some code
+			// });
+			// console.log(a,'console');
+			async function name() {
+				let a1 = await new Promise(function(resolve, reject) {
+					console.log(a,'promise');
+					a = 25;
+					resolve();
+				});
+				console.log(a, 'console');
+				setTimeout(function timeout() {
+					console.log(a,'settimeout');
+					a = 10;
+				}, 0);
+			}
+			name();
 
 			
 	</script>

@@ -10,24 +10,30 @@
 	<script>
 		const functionsarr =  [
 			() => new Promise((res) => setTimeout(() => res('JavaScript'), 500)),
-			() => new Promise((res) => setTimeout(() => res('is the best'), 250)),
+			() => new Promise((res) => setTimeout(() => res(' is the best'), 250)),
 			() => new Promise((res) => setTimeout(() => res('programming language'), 150)),
 		];
 		// setTimeout(function(){ return console.log('1')}, 500);
 		// setTimeout(function(){ return console.log('2')}, 300);
 		// setTimeout(function(){ return console.log('3')}, 200);
 
-		const handler = (arr, str = '') => {
-			if (!arr.length) return str.trim();
+		const handler = async (arr) => {
+			/* if (!arr.length) return str.trim();
 			else {
 				let [curr, ...rest] = arr;
 				return curr().then(curr2 => handler(rest, `${str} ${curr2}`))
-			}
+			} */
+			let str = '';
+			let a = await arr[0]();
+			str += a;
+			let b = await arr[1]();
+			str += b;
+			let c = await arr[2]();
+			str += c;
+			return str;
 		};
 		
-		handler(functionsarr).then((res) => {
-			console.log(res); 
-		});// JavaScrpt is the best programming language
+		handler(functionsarr).then(res => console.log(res));// JavaScrpt is the best programming language
 	</script>
 </body>
 </html>
