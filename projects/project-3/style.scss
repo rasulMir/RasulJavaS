@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+.head {
+	padding: 30px 0;
+
+	// .head__title
+	&__title {
+		color: #b43e9b;
+		text-align: center;
+		text-shadow: 1px 1px #61024c;
+	}
+}
+.main {
+}
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.cards-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+.meal-card {
+	min-width: 32%;
+	// .meal-card__title
+	&__title {
+	}
+
+	// .meal-card__img
+	&__img {
+	}
+
+	// .meal-card__ingredients
+	&__ingredients {
+	}
+}
