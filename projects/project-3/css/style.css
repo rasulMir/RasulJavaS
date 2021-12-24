@@ -6,14 +6,18 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  background-color: #160202;
+}
+
 .head {
   padding: 30px 0;
 }
 
 .head__title {
-  color: #b43e9b;
+  color: #826bf7;
   text-align: center;
-  text-shadow: 1px 1px #61024c;
+  text-shadow: 1px 1px #2d0bc7;
 }
 
 .container {
@@ -22,7 +26,8 @@
   padding: 0 15px;
 }
 
-.cards-wrap {
+.cards-wrapper {
+  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,7 +36,7 @@
           justify-content: space-between;
 }
 
-.meal-card {
+.card {
   min-width: 32%;
 }
 /*# sourceMappingURL=style.css.map */

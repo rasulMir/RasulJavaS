@@ -1,50 +1,47 @@
-class Card {
-	constructor (cardWrap, container) {
-		this.cardWrap = document.querySelector('.main-body');
-		this.container = document.querySelector('.container');
+let baseurl = 'https://api.sampleapis.com/recipes/recipes';
+async function response(url) {
+	try {
+		const response = await fetch(url);
+		const arr = await response.json();
+		return arr;
 	}
 
-	createWrapper() {
-		const wrapDiv = document.createElement('div');
-		wrapDiv.className = this.cardWrap;
-		const cont = document.querySelector(this.container);
-		wrapDiv.insertAdjacentElement('beforebegin', wrapDiv);
+	catch(rej) {
+		return console.log(rej);
 	}
-
-	async getData(url) {
-		try {
-			const data = await fetch(url);
-			
-			const arr = await data.json();
-			return arr;
-		}
-		catch(rej) {
-			return console.log('Пожулуйста перезагрузите страницу');
-		}
+}
+let c = async () => {
+	try {
+		let c = await response(baseurl);
+		return await c.map(e => createCard({...e})).join();
 	}
+	catch(rej) {
+		return console.log(rej);
+	}
+}
+let d = c();
 
-	createCard () {
-		return `
-			<div class="meal-card">
-					<h2 class="meal-card__title">
-
-					</h2>
-					<div class="meal-card__img">
-						<img src="" alt="">
-					</div>
-					<p class="meal-card__ingredients">
-
-					</p>
+function createCard({title, photoUrl, ingredients}) {
+	return `
+		<div class="card">
+			<h2 class="card__title">${title}</h2>
+			<div class="card__img">
+				<img src="${photoUrl}" alt="food image">
 			</div>
-		`
-	}
-
+			<p class="card__ingredients">
+				${ingredients}
+			</p>
+		</div>
+	`;
 }
 
-let a = new Card('.cards-wrap', '.container');
+function createCardWrap(n) {
+	const container = document.querySelectorAll('.container');
+	const wrapper = document.createElement('div');
+	wrapper.classList.add('cards-wrapper');
+	container[n].append(wrapper);
+	return document.querySelector('.cards-wrapper');
+}
 
-const objData = a.getData('https://api.sampleapis.com/recipes/recipes');
-console.log(objData);
-
-
-
+let b = createCardWrap(1);
+b.append(d);
