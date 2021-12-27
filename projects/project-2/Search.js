@@ -13,17 +13,19 @@ class Search extends Card {
 		return inp;
 	}
 
-	async InputSearch(url){
-		let search = await this.createInputSearch();
+	onInputFn() {
+		let country = document.querySelectorAll('.card');
+		
+		country.forEach(elem => {
+			elem.hidden = true;
+			if (elem.children[1].innerHTML.startsWith(this.value)) elem.hidden = false;
+		});
+	}
 
-		search.oninput = function (arr) {
-			let country = document.querySelectorAll('.card');
-			
-			country.forEach(elem => {
-				elem.hidden = true;
-				if (elem.children[1].innerHTML.startsWith(search.value)) elem.hidden = false;
-			});
-		}
+	InputSearch(){
+		let search = this.createInputSearch();
+
+		search.oninput = this.onInputFn;
 	}
 }
 
