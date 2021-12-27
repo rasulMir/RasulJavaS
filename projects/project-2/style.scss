@@ -1,0 +1,143 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	font-size: 62.5%;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.wrapper {
+	font-family: 'Poppins', sans-serif;
+	background-color: #263238;
+}
+.head {
+	padding: 2em;
+
+	// .head__title
+	&__title {
+		text-align: center;
+		font-size: 3em;
+		color: #F07178;
+	}
+}
+
+.main {
+	padding: 2rem 0;
+}
+.country-cards {
+
+	&-top{
+		padding: 1.5rem;
+		display: flex;
+		justify-content: center;
+
+		&__search {
+			padding: .5em .25em;
+			flex: 0 0 70%;
+			background-color: rgba(255, 255, 255, 0.1);
+			color: white;
+			font-size: 1.6rem;
+			border: .2em solid #671895;
+			border-radius: .2em;
+
+			&:focus{
+				background-color: transparent;
+				outline: none;
+			}
+		}
+	}
+}
+.cards-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-self: flex-start;
+	flex-wrap: wrap;
+}
+
+.card {
+	flex: 0 0 100%;
+	margin: 1em 0;
+	padding: 1em;
+	color: #00D6E9;
+	background: linear-gradient(to bottom, #4D7C8C, #2F3646);
+
+	// .card__top
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 0 1em 0;
+	}
+
+	// .card__img
+	&__img {
+		flex: 0 0 49%;
+		position: relative;
+		padding: 0 0 49% 0;
+
+		& > img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	// .card__name
+	&__name {
+		text-transform: uppercase;
+		text-align: center;
+		text-shadow: 0 0 20px rgb(173, 172, 172);
+		font-size: 2rem;
+		font-weight: 600;
+		color: #202124;
+		margin: 0 0 1em 0;
+	}
+
+	// .card__info
+	&__info {
+		font-size: 1.4em;
+		list-style-type: none;
+	}
+
+	// .card__info-item
+	&__info-item {
+		display: flex;
+		justify-content: space-between;
+		color: #606263;
+		text-transform: lowercase;
+		& > span {
+			text-transform: uppercase;
+			color: white;
+		}
+	}
+}
+
+@media screen and (min-width: 480px) {
+	.card {
+		flex: 0 0 49%;
+	}
+}
+@media screen and (min-width: 768px) {
+	.card {
+		flex: 0 0 32%;
+	}
+}
+@media screen and (min-width: 768px) {
+	.card {
+		flex: 0 0 24%;
+	}
+	.country-cards-top {
+		&__search {
+			flex: 0 0 50%;
+		}
+	}	
+}
