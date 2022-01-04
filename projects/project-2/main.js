@@ -1,1 +1,2 @@
-import Search from "./Search.js";
+import Pagination from "./Pagination.js";
+

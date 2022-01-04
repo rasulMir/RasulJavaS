@@ -13,17 +13,18 @@ class Search extends Card {
 		return inp;
 	}
 
-	onInputFn() {
-		let country = document.querySelectorAll('.card');
+	async onInputFn() {
+		let cards = document.querySelectorAll('.card');
 		
-		country.forEach(elem => {
+		cards.forEach(elem => {
 			elem.hidden = true;
-			if (elem.children[1].innerHTML.startsWith(this.value)) elem.hidden = false;
+			let bool = elem.children[1].innerHTML.startsWith(this.value);
+			if (bool) elem.hidden = false;
 		});
 	}
 
-	InputSearch(){
-		let search = this.createInputSearch();
+	async InputSearch(){
+		let search = await this.createInputSearch();
 
 		search.oninput = this.onInputFn;
 	}

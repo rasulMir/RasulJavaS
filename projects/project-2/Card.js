@@ -51,7 +51,6 @@ class Card extends CountryCards {
 		this.cardsWrap.insertAdjacentHTML('beforeend', arr);
 		return data;
 	}
-
 }
 let c = new Card();
 
