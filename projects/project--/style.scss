@@ -1,0 +1,71 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.main {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+	background-color: rgb(185, 184, 184);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main-top {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	padding: 15px 0;
+}
+.card {
+
+	flex: 0 0 21%;
+	margin: 15px 20px;
+	border: 1px solid grey;
+	background-color: rgb(9, 245, 9);
+	text-align: center;
+
+	// .card__letter
+	&__letter {
+		font-size: 5em;
+		text-transform: uppercase;
+		font-weight: 900;
+	}
+
+	// .card__num
+	&__num {
+		font-size: 4em;
+		font-weight: 900;
+	}
+}
+.main-btns {
+	margin: 0;
+	padding: 10px 0;
+	display: flex;
+	justify-content: center;
+	align-self: flex-start;
+	flex-wrap: wrap;
+
+	&__item {
+		list-style-type: none;
+		font-size: 2em;
+		line-height: 1em;
+		padding: .25em .5em;
+		margin: .25em;
+		border: 2px solid rgb(5, 5, 99);
+		border-radius: .2em;
+		transition: all .5s linear;
+		cursor: pointer;
+		&:hover {
+			border-color: rgb(59, 59, 255);
+		}
+		&_active {
+			border-color: rgb(0, 0, 223);
+			color: rgb(253, 76, 76);
+		}
+		&_dots {
+			border: none;
+			padding-bottom: 0;
+		}
+	}
+}

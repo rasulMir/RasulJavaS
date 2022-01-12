@@ -1,0 +1,94 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  background-color: #b9b8b8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 15px 0;
+}
+
+.card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 21%;
+          flex: 0 0 21%;
+  margin: 15px 20px;
+  border: 1px solid grey;
+  background-color: #09f509;
+  text-align: center;
+}
+
+.card__letter {
+  font-size: 5em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.card__num {
+  font-size: 4em;
+  font-weight: 900;
+}
+
+.main-btns {
+  margin: 0;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main-btns__item {
+  list-style-type: none;
+  font-size: 2em;
+  line-height: 1em;
+  padding: .25em .5em;
+  margin: .25em;
+  border: 2px solid #050563;
+  border-radius: .2em;
+  -webkit-transition: all .5s linear;
+  -o-transition: all .5s linear;
+  transition: all .5s linear;
+  cursor: pointer;
+}
+
+.main-btns__item:hover {
+  border-color: #3b3bff;
+}
+
+.main-btns__item_active {
+  border-color: #0000df;
+  color: #fd4c4c;
+}
+
+.main-btns__item_dots {
+  border: none;
+  padding-bottom: 0;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Game</title>
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="user-window">
+		</div>
+		<div class="check-user">
+			<div class="alert-card">
+				<h3 class="alert-card__title">
+					Choose level
+				</h3>
+				<button class="alert-card__btn_levels alert-card__btn" id="levels" type="button" data-level="1">Easy</button>
+				<button class="alert-card__btn_levels alert-card__btn" id="levels" type="button" data-level="2">Middle</button>
+				<button class="alert-card__btn_levels alert-card__btn" id="levels" type="button" data-level="3">Master</button>
+			</div>
+		</div>
+		<div class="hidden check-user">
+			<form method="get" action="#" class="alert-card">
+				<h3 class="alert-card__title">
+					Enter your Player name!!!
+				</h3>
+				<input class="alert-card__player-name" type="text" name="playerName" id="playerName" required>
+				<button class="alert-card__btn_start-game alert-card__btn" id="startGameBtn" type="button">Start game</button>
+			</form>
+		</div>
+	</div>
+
+	<script src="./main.js" type="module"></script>
+</body>
+</html>
