@@ -1,43 +1,51 @@
-class GameLogic {
+import Cards from "./Cards.js";
+class GameLogic extends Cards{
 
 	constructor() {
+		super();
 		this.cells = document.querySelectorAll('.cells');
 		this.cardFront = document.querySelectorAll('.card__front');
 		this.cardBack = document.querySelectorAll('.card__back');
+		this.popUp = document.querySelector('.pop-up');
 	}
 
-	frontCardHide(front) {
-		front.classList.add('card__front_hidden');
+	popUpAnimation(selector, n) {
+		let textArr = ['Good Job!', 'OOPS!'];
+		this.popUp.textContent = textArr[n];
+		this.popUp.classList.add(selector);
+		setTimeout(() => this.popUp.classList.remove(selector), 1000);
 	}
 
-	getNumbers(curr) {
-		return curr.previousElementSibling.innerText;
-	}
+	checkCardBack() {
+		let opened = this.userWindow.querySelectorAll('.card__front_hidden');
+		if (opened.length === 2) {
+			let first = opened[0].previousElementSibling.innerHTML;
+			let second = opened[1].previousElementSibling.innerHTML;
+			if (first === second) {
+				let settime = setTimeout(() => opened.forEach( e => e.closest('.cells').remove()), 1000);
+				this.popUpAnimation('pop-up_animation', 0);
+				this.currentCards.textContent -= 2;
+			}
+			else {
+				this.popUpAnimation('pop-up_animation', 1);
+				let settime = setTimeout(() => opened.forEach( e => e.classList.remove('card__front_hidden')), 1000);
+			}
+		}
+	} 
 
 	gaming() {
-		for (let frontCards of this.cardFront) {
-			frontCards.addEventListener('click' , (e) => {
-				let temp , temp2, currCard, firstNum, secondNum;
-				currCard = e.target;
-				this.frontCardHide(currCard);
-				firstNum = this.getNumbers(currCard);
+		this.userWindow.addEventListener('click', (e) => {
+			let curr = e.target, back;
 
-				if (secondNum === firstNum) {
-					firstNum.previousElementSibling.classList.remove('card__front_hidden');
-					firstNum.previousElementSibling.style.background = 'white';
-					secondNum.previousElementSibling.classList.remove('card__front_hidden');
-					second.previousElementSibling.style.background = 'white';
-				}
-				else if (secondNum) {
-					firstNum.previousElementSibling.classList.remove('card__front_hidden');
-					secondNum.previousElementSibling.classList.remove('card__front_hidden');
-				}
-				temp = currCard;
-				currCard = null;
-				temp2 = temp;
-				secondNum = this.getNumbers(temp2);
-			});
-		}
+			if(curr.classList.contains('card__front')) {
+				back = curr.previousElementSibling;
+				curr.classList.add('card__front_hidden');
+			}
+			else return;
+
+			this.checkCardBack();
+
+		});
 	}
 
 }

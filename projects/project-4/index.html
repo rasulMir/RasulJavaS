@@ -10,10 +10,17 @@
 <body>
 
 	<div class="wrapper">
+		<div class="game-info">
+			<div class="game-info__player-name"></div>
+			<div class="game-info__current-cards"></div>
+			<div class="game-info__time"></div>
+		</div>
 		<div class="user-window">
 		</div>
-		<div class="check-user">
-			<div class="alert-card">
+		<div class="pop-up">
+		</div>
+		<div class="check-user hidden">
+			<div class="alert-card ">
 				<h3 class="alert-card__title">
 					Choose level
 				</h3>
@@ -22,7 +29,7 @@
 				<button class="alert-card__btn_levels alert-card__btn" id="levels" type="button" data-level="3">Master</button>
 			</div>
 		</div>
-		<div class="hidden check-user">
+		<div class=" check-user">
 			<form method="get" action="#" class="alert-card">
 				<h3 class="alert-card__title">
 					Enter your Player name!!!

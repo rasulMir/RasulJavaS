@@ -3,6 +3,8 @@ class Cards {
 	constructor() {
 		this.userWindow = document.querySelector('.user-window');
 		this.levelBtns = document.querySelectorAll('.alert-card__btn_levels');
+		this.currentCards = document.querySelector('.game-info__current-cards');
+		this.time = document.querySelector('.game-info__time');
 	}
 
 	randomNumbers(min, max) {
@@ -38,8 +40,27 @@ class Cards {
 			`;
 			this.userWindow.insertAdjacentHTML('beforeend', cardTemplate);
 		}
+		this.currentCards.textContent = numbers.length;
+	}
 
-		document.querySelector('.check-user').classList.add('hidden');
+	addZero(n) {
+		if (n < 10) return '0' + n;
+		return n;
+	}
+
+	gameTime() {
+		let m = 0, s = 0;
+		this.time.textContent = `${this.addZero(m)}:${this.addZero(s)}`;
+		setInterval(
+			() => {
+				++s;
+				if (s > 59) {
+					++m;
+					s = 0;
+				}
+				this.time.textContent = `${this.addZero(m)}:${this.addZero(s)}`;
+			}
+		, 1000);
 	}
 
 	getLevel() {
@@ -48,6 +69,7 @@ class Cards {
 			let lvl = +currBtn.getAttribute('data-level') * 10;
 			currBtn.closest('.check-user').classList.add('hidden');
 			this.createCards(lvl);
+			this.gameTime();
 		}));
 	}
 

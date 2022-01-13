@@ -16,6 +16,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -23,13 +27,34 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: #00221a;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.game-info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10%;
+          flex: 0 0 10%;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #1fff0ac7;
+  letter-spacing: .2rem;
 }
 
 .user-window {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 80%;
           flex: 0 0 80%;
-  height: 80%;
+  width: 80%;
   padding: 1.5rem;
   display: -ms-grid;
   display: grid;
@@ -86,6 +111,63 @@
 
 .card__front_hidden {
   left: -50%;
+}
+
+.pop-up {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+      -ms-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  font-size: 4rem;
+  font-weight: 600;
+  color: #1fff0a;
+  opacity: 0;
+  z-index: 9999;
+}
+
+.pop-up_animation {
+  -webkit-animation: popUp .7s linear 1 backwards;
+          animation: popUp .7s linear 1 backwards;
+}
+
+@-webkit-keyframes popUp {
+  0% {
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    top: 50%;
+  }
+  90% {
+    top: 50%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes popUp {
+  0% {
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    top: 50%;
+  }
+  90% {
+    top: 50%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 .check-user {

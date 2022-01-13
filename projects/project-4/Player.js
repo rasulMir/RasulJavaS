@@ -18,18 +18,21 @@ class Player {
 		let currBtn = event.target;
 		let checkUser = currBtn.closest('.check-user');
 		checkUser.classList.add('hidden');
+		checkUser.previousElementSibling.classList.remove('hidden');
 	}
 
 	registrationPlayer (event) {
+		this.playerName = document.querySelector('.game-info__player-name');
 		let curr = event.target;
 		this.nickName = curr.value;
+		this.playerName.textContent = this.nickName;
 	}
 
 	startGame() {
 		this.playerNameInput.onchange = this.registrationPlayer;
 		this.startGameBtn.addEventListener('click', this.hideCheckUser);
+		this.startGameBtn.addEventListener('click', this.addGameInfo);
 	}
 
 }
-
 export default Player;
