@@ -25,6 +25,7 @@ class GameLogic extends Cards{
 				let settime = setTimeout(() => opened.forEach( e => e.closest('.cells').remove()), 1000);
 				this.popUpAnimation('pop-up_animation', 0);
 				this.currentCards.textContent -= 2;
+				console.log(this.currentCards.textContent === 0);
 			}
 			else {
 				this.popUpAnimation('pop-up_animation', 1);
@@ -42,10 +43,11 @@ class GameLogic extends Cards{
 				curr.classList.add('card__front_hidden');
 			}
 			else return;
-
 			this.checkCardBack();
-
 		});
+		// if (this.currentCards.textContent === 0) {
+		// 	this.getLevel();
+		// }
 	}
 
 }
