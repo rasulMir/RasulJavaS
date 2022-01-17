@@ -1,3 +1,7 @@
-let right = document.querySelector('.right');
+import Rackets from "./Rackets.js";
+import Ball from "./Ball.js";
 
-right.addEventListener('key')
+let ball = new Ball(function() {
+	this.ballMove();
+});
+ball.init();

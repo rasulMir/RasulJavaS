@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		.wrapper{
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: rgba(37, 37, 37, 0.825);
+		}
+
+		.table {
+			position: relative;
+			width: 1000px;
+			height: 400px;
+			background-color: rgba(255, 255, 255, 0.521);
+			border: 1px solid green;
+			border-radius: 5px;
+		}
+
+		.ball {
+			position: absolute;
+			top: 175px;
+			left: 475px;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: red;
+			box-shadow: inset 0 0 10px pink;
+			color: red;
+		}
+
+		.rocket {
+			width: 20px;
+			height: 90px;
+			position: absolute;
+			top: 155px;
+			border: 1px solid;
+			border-radius: 4px;
+			transition: transform 50ms linear;
+		}
+		.rocket__right {
+			right: 5px;
+			background-color: brown;
+			border-color: tomato;
+		}
+		.rocket__left {
+			left: 5px;
+			background-color: rgb(8, 44, 202);
+			border-color: rgb(108, 147, 252);
+		}
+		.rocket__left_animation-top {
+			transform-origin: top;
+			transform: rotateZ(-4deg);
+		}
+		.rocket__left_animation-bttm {
+			transform-origin: bottom;
+			transform: rotateZ(4deg);
+		}
+		.rocket__right_animation-top {
+			transform-origin: top;
+			transform: rotateZ(4deg);
+		}
+		.rocket__right_animation-bttm {
+			transform-origin: bottom;
+			transform: rotateZ(-4deg);
+		}
+
+	</style>
+	<div class="wrapper">
+		<div class="table">
+			<div class="rocket rocket__right"></div>
+			<div class="rocket rocket__left"></div>
+			<div class="ball">
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+		const table = document.querySelector('.table');
+		const ball = document.querySelector('.ball');
+		const rocketLeft = document.querySelector('.rocket__left');
+		const rocketRight = document.querySelector('.rocket__right');
+		let tableTop = table.clientTop;
+		let tableLeft = table.clientLeft;
+		let tableRight = table.clientLeft + table.clientWidth;
+		let tableBttm = table.clientTop + table.clientHeight;
+		
+		
+		document.addEventListener('keydown', event => {
+			if (event.code === 'KeyW') {
+				rocketLeft.classList.add('rocket__left_animation-top');
+				if (rocketLeft.offsetTop <= tableTop + 1) return false;
+				rocketLeft.style.top = `${rocketLeft.offsetTop - 4}px`;	
+			}
+			if (event.code === 'KeyS') {
+				rocketLeft.classList.add('rocket__left_animation-bttm');
+				if (rocketLeft.offsetHeight + rocketLeft.offsetTop >= tableBttm - 2) return false;
+				rocketLeft.style.top = `${rocketLeft.offsetTop + 4}px`;
+			}
+			if (event.code === 'ArrowUp') {
+				rocketRight.classList.add('rocket__right_animation-top');
+				if (rocketRight.offsetTop <= tableTop + 1) return false;
+				rocketRight.style.top = `${rocketRight.offsetTop - 4}px`;	
+			}
+			if (event.code === 'ArrowDown') {
+				rocketRight.classList.add('rocket__right_animation-bttm'); false
+				if (rocketRight.offsetHeight + rocketRight.offsetTop >= tableBttm - 2) return false;
+				rocketRight.style.top = `${rocketRight.offsetTop + 4}px`;
+			}
+		}, false);
+
+		document.addEventListener('keyup', event => {
+			if (event.code === 'ArrowUp') {
+				rocketRight.classList.remove('rocket__right_animation-top');
+			}
+			if (event.code === 'ArrowDown') {
+				rocketRight.classList.remove('rocket__right_animation-bttm');
+			}
+			if (event.code === 'KeyW') {
+				rocketLeft.classList.remove('rocket__left_animation-top');
+			}
+			if (event.code === 'KeyS') {
+				rocketLeft.classList.remove('rocket__left_animation-bttm');
+			}
+		}, false);
+		
+		function handler() {
+			let top = (Math.random() > .5) ? -5 : 5;
+			let left = (top < 0) ? 5 : -5;
+			let d = 0;
+
+			let setInter = setInterval(() => {
+		
+				if (ball.offsetTop <= tableTop) {
+					top = 5;
+				}
+				else if (ball.offsetTop + ball.offsetHeight >= tableBttm) {
+					top = -5;
+				} 
+				else if (ball.offsetLeft + ball.clientWidth >= tableRight - 25) {
+					if (rocketRight.offsetTop < ball.offsetTop && rocketRight.offsetTop + rocketRight.offsetHeight > ball.offsetHeight + ball.offsetTop) {
+						left = -5;
+					}
+					else if (ball.offsetLeft + ball.clientWidth >= tableRight - 20){
+						clearInterval(setInter);
+					}
+				}
+				else if (ball.offsetLeft <= tableLeft + 25) {
+					if (ball.offsetTop > rocketLeft.offsetTop && ball.offsetTop + ball.offsetHeight < rocketLeft.offsetTop + rocketLeft.offsetHeight) {
+						left = 5;
+					}
+					else if (ball.offsetLeft <= tableLeft + 20) {
+						clearInterval(setInter);
+					}
+				}
+			
+				ball.style.left = `${ball.offsetLeft + left}px`;
+				ball.style.top = `${ball.offsetTop + top}px`;
+			}, 35);
+		}
+
+
+		ball.addEventListener('click', handler);
+		
+		
+	</script>
+</body>
+</html>
