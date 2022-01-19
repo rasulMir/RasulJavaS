@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Slider</title>
 </head>
 <body>
 	<style>
@@ -13,171 +13,175 @@
 			margin: 0;
 			padding: 0;
 		}
-		.wrapper{
-			height: 100vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: rgba(37, 37, 37, 0.825);
+		body {
+			background-color: #001834;
 		}
-
-		.table {
+		.wrapper {
+			overflow: hidden;
+			max-width: 1200px;
+			margin: 100px auto;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+		.slider-wrap {
 			position: relative;
-			width: 1000px;
-			height: 400px;
-			background-color: rgba(255, 255, 255, 0.521);
+			left: 0;
+			display: flex;
+			transition: all ease 1s;
+		}
+		.slider__item {
+			flex: 0 0 33%;
+			margin: 0 5px 0 0;
 			border: 1px solid green;
 			border-radius: 5px;
+			overflow: hidden;
+			text-align: center;
+			font-size: 14px;
+			color: white;
 		}
-
-		.ball {
+		.item__img {
+			position: relative;
+			min-height: 300px;
+			margin: 0 0 10px 0;
+		}
+		.item__img > img {
 			position: absolute;
-			top: 175px;
-			left: 475px;
-			width: 50px;
-			height: 50px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+		}
+		.item__title {
+			margin: 0 0 10px 0;
+		}
+		.item__description {
+			margin: 0 0 10px 0;
+		}
+		.slider-dots {
+			margin: 30px 0 0 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			list-style-type: none;
+		}
+		.slider-dots__item {
+			margin: 5px;
+			flex: 0 0 30px;
+			height: 30px;
 			border-radius: 50%;
-			background-color: red;
-			box-shadow: inset 0 0 10px pink;
-			color: red;
+			text-align: center;
+			line-height: 30px;
+			font-size: 14px;
+			color: white;
+			border: 1px solid grey;
+			cursor: pointer;
 		}
-
-		.rocket {
-			width: 20px;
-			height: 90px;
-			position: absolute;
-			top: 155px;
-			border: 1px solid;
-			border-radius: 4px;
-			transition: transform 50ms linear;
-		}
-		.rocket__right {
-			right: 5px;
-			background-color: brown;
-			border-color: tomato;
-		}
-		.rocket__left {
-			left: 5px;
-			background-color: rgb(8, 44, 202);
-			border-color: rgb(108, 147, 252);
-		}
-		.rocket__left_animation-top {
-			transform-origin: top;
-			transform: rotateZ(-4deg);
-		}
-		.rocket__left_animation-bttm {
-			transform-origin: bottom;
-			transform: rotateZ(4deg);
-		}
-		.rocket__right_animation-top {
-			transform-origin: top;
-			transform: rotateZ(4deg);
-		}
-		.rocket__right_animation-bttm {
-			transform-origin: bottom;
-			transform: rotateZ(-4deg);
-		}
-
 	</style>
 	<div class="wrapper">
-		<div class="table">
-			<div class="rocket rocket__right"></div>
-			<div class="rocket rocket__left"></div>
-			<div class="ball">
-
+		<div class="slider-wrap">
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/1/400" alt=""></div>
+				<h2 class="item__title">1</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/2/400" alt=""></div>
+				<h2 class="item__title">2</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/3/400" alt=""></div>
+				<h2 class="item__title">3</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/4/400" alt=""></div>
+				<h2 class="item__title">4</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/5/400" alt=""></div>
+				<h2 class="item__title">5</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/6/400" alt=""></div>
+				<h2 class="item__title">6</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/7/400" alt=""></div>
+				<h2 class="item__title">7</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/8/400" alt=""></div>
+				<h2 class="item__title">8</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/9/400" alt=""></div>
+				<h2 class="item__title">9</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/10/400" alt=""></div>
+				<h2 class="item__title">10</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/11/400" alt=""></div>
+				<h2 class="item__title">11</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/12/400" alt=""></div>
+				<h2 class="item__title">12</h2>
+				<div class="item__description">lorem, ipsum.</div>
 			</div>
 		</div>
+		<ul class="slider-dots">
+		</ul>
 	</div>
 
 	<script>
+		class Slider {
+			constructor() {
+				this.sliderWrap = document.querySelector('.slider-wrap');
+				this.items = document.querySelectorAll('.slider__item');
+				this.dotsWrap = document.querySelector('.slider-dots');
+				this.itemsOnPerDot = 3;
+			}
 
-		const table = document.querySelector('.table');
-		const ball = document.querySelector('.ball');
-		const rocketLeft = document.querySelector('.rocket__left');
-		const rocketRight = document.querySelector('.rocket__right');
-		let tableTop = table.clientTop;
-		let tableLeft = table.clientLeft;
-		let tableRight = table.clientLeft + table.clientWidth;
-		let tableBttm = table.clientTop + table.clientHeight;
-		
-		
-		document.addEventListener('keydown', event => {
-			if (event.code === 'KeyW') {
-				rocketLeft.classList.add('rocket__left_animation-top');
-				if (rocketLeft.offsetTop <= tableTop + 1) return false;
-				rocketLeft.style.top = `${rocketLeft.offsetTop - 4}px`;	
-			}
-			if (event.code === 'KeyS') {
-				rocketLeft.classList.add('rocket__left_animation-bttm');
-				if (rocketLeft.offsetHeight + rocketLeft.offsetTop >= tableBttm - 2) return false;
-				rocketLeft.style.top = `${rocketLeft.offsetTop + 4}px`;
-			}
-			if (event.code === 'ArrowUp') {
-				rocketRight.classList.add('rocket__right_animation-top');
-				if (rocketRight.offsetTop <= tableTop + 1) return false;
-				rocketRight.style.top = `${rocketRight.offsetTop - 4}px`;	
-			}
-			if (event.code === 'ArrowDown') {
-				rocketRight.classList.add('rocket__right_animation-bttm'); false
-				if (rocketRight.offsetHeight + rocketRight.offsetTop >= tableBttm - 2) return false;
-				rocketRight.style.top = `${rocketRight.offsetTop + 4}px`;
-			}
-		}, false);
+			createDots(){
 
-		document.addEventListener('keyup', event => {
-			if (event.code === 'ArrowUp') {
-				rocketRight.classList.remove('rocket__right_animation-top');
-			}
-			if (event.code === 'ArrowDown') {
-				rocketRight.classList.remove('rocket__right_animation-bttm');
-			}
-			if (event.code === 'KeyW') {
-				rocketLeft.classList.remove('rocket__left_animation-top');
-			}
-			if (event.code === 'KeyS') {
-				rocketLeft.classList.remove('rocket__left_animation-bttm');
-			}
-		}, false);
-		
-		function handler() {
-			let top = (Math.random() > .5) ? -5 : 5;
-			let left = (top < 0) ? 5 : -5;
-			let d = 0;
+				let end = Math.ceil(this.items.length / this.itemsOnPerDot);
+				for(let i = 1; i <= end; i++) {
+					let dotsHTML = `
+						<li class="slider-dots__item">${i}</li>
+					`;
+					this.dotsWrap.insertAdjacentHTML('beforeend', dotsHTML);
+				}
 
-			let setInter = setInterval(() => {
-		
-				if (ball.offsetTop <= tableTop) {
-					top = 5;
-				}
-				else if (ball.offsetTop + ball.offsetHeight >= tableBttm) {
-					top = -5;
-				} 
-				else if (ball.offsetLeft + ball.clientWidth >= tableRight - 25) {
-					if (rocketRight.offsetTop < ball.offsetTop && rocketRight.offsetTop + rocketRight.offsetHeight > ball.offsetHeight + ball.offsetTop) {
-						left = -5;
-					}
-					else if (ball.offsetLeft + ball.clientWidth >= tableRight - 20){
-						clearInterval(setInter);
-					}
-				}
-				else if (ball.offsetLeft <= tableLeft + 25) {
-					if (ball.offsetTop > rocketLeft.offsetTop && ball.offsetTop + ball.offsetHeight < rocketLeft.offsetTop + rocketLeft.offsetHeight) {
-						left = 5;
-					}
-					else if (ball.offsetLeft <= tableLeft + 20) {
-						clearInterval(setInter);
-					}
-				}
-			
-				ball.style.left = `${ball.offsetLeft + left}px`;
-				ball.style.top = `${ball.offsetTop + top}px`;
-			}, 35);
+			}
+
+			init() {
+				this.createDots();
+				let dots = Array.from(document.querySelectorAll('.slider-dots__item'));
+				dots.forEach(dot => {
+					dot.addEventListener('click', (e) => {
+						let current = e.target;
+						let itemsWidth = this.items[0].offsetWidth + 5;// + this.items[0].offsetLeft;
+						let left = (itemsWidth * 3) * (current.textContent - 1);
+						this.sliderWrap.style.left = `-${left}px`;
+					});
+				});
+				
+			}
+
 		}
-
-
-		ball.addEventListener('click', handler);
-		
-		
+		let a = new Slider;
+		a.init();
 	</script>
 </body>
 </html>
