@@ -4,81 +4,27 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
 	<title>Slider</title>
 </head>
 <body>
-	<style>
-		* {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
-		body {
-			background-color: #001834;
-		}
-		.wrapper {
-			overflow: hidden;
-			max-width: 1200px;
-			margin: 100px auto;
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		}
-		.slider-wrap {
-			position: relative;
-			left: 0;
-			display: flex;
-			transition: all ease 1s;
-		}
-		.slider__item {
-			flex: 0 0 33%;
-			margin: 0 5px 0 0;
-			border: 1px solid green;
-			border-radius: 5px;
-			overflow: hidden;
-			text-align: center;
-			font-size: 14px;
-			color: white;
-		}
-		.item__img {
-			position: relative;
-			min-height: 300px;
-			margin: 0 0 10px 0;
-		}
-		.item__img > img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 100%;
-			height: 100%;
-		}
-		.item__title {
-			margin: 0 0 10px 0;
-		}
-		.item__description {
-			margin: 0 0 10px 0;
-		}
-		.slider-dots {
-			margin: 30px 0 0 0;
-			padding: 0;
-			display: flex;
-			justify-content: center;
-			list-style-type: none;
-		}
-		.slider-dots__item {
-			margin: 5px;
-			flex: 0 0 30px;
-			height: 30px;
-			border-radius: 50%;
-			text-align: center;
-			line-height: 30px;
-			font-size: 14px;
-			color: white;
-			border: 1px solid grey;
-			cursor: pointer;
-		}
-	</style>
 	<div class="wrapper">
 		<div class="slider-wrap">
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/1/400" alt=""></div>
+				<h2 class="item__title">1</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/1/400" alt=""></div>
+				<h2 class="item__title">1</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
+			<div class="slider__item">
+				<div class="item__img"><img src="https://picsum.photos/id/1/400" alt=""></div>
+				<h2 class="item__title">1</h2>
+				<div class="item__description">lorem, ipsum.</div>
+			</div>
 			<div class="slider__item">
 				<div class="item__img"><img src="https://picsum.photos/id/1/400" alt=""></div>
 				<h2 class="item__title">1</h2>
@@ -143,45 +89,6 @@
 		<ul class="slider-dots">
 		</ul>
 	</div>
-
-	<script>
-		class Slider {
-			constructor() {
-				this.sliderWrap = document.querySelector('.slider-wrap');
-				this.items = document.querySelectorAll('.slider__item');
-				this.dotsWrap = document.querySelector('.slider-dots');
-				this.itemsOnPerDot = 3;
-			}
-
-			createDots(){
-
-				let end = Math.ceil(this.items.length / this.itemsOnPerDot);
-				for(let i = 1; i <= end; i++) {
-					let dotsHTML = `
-						<li class="slider-dots__item">${i}</li>
-					`;
-					this.dotsWrap.insertAdjacentHTML('beforeend', dotsHTML);
-				}
-
-			}
-
-			init() {
-				this.createDots();
-				let dots = Array.from(document.querySelectorAll('.slider-dots__item'));
-				dots.forEach(dot => {
-					dot.addEventListener('click', (e) => {
-						let current = e.target;
-						let itemsWidth = this.items[0].offsetWidth + 5;// + this.items[0].offsetLeft;
-						let left = (itemsWidth * 3) * (current.textContent - 1);
-						this.sliderWrap.style.left = `-${left}px`;
-					});
-				});
-				
-			}
-
-		}
-		let a = new Slider;
-		a.init();
-	</script>
+	<script src="./main.js" type="module"></script>
 </body>
 </html>
