@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>TODO</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="edit-task-wrap" data-hidden="true">
+			<div class="edit-task">
+				<input class="edit-task__date" type="date" name="taskDate" id="taskDate">
+				<input class="edit-task__text" type="text" name="taskText" id="taskText" placeholder="Add Task...">
+				<label class="edit-task__lbl head__lbl" for="taskChbx">
+					<input class="edit-task__chbx head__chbx"  type="checkbox" name="" id="taskChbx">
+					<span></span>
+				</label>
+				<div class="tasks-list__btns">edit-task__btn_exit
+					<button class="edit-task__btn " type="button">Выйти</button>
+					<button class="edit-task__btn edit-task__btn_edit" type="button">Изменить</button>
+				</div>
+			</div>
+		</div>
+		<header class="header">
+			<div class="container">
+				<section class="head">
+					<a href="#" class="head__logo">Tasks</a>
+					<div class="head__add-task">
+						<input class="head__date" type="date" name="taskDate" id="taskDate">
+						<input class="head__text" type="text" name="taskText" id="taskText" placeholder="Add Task...">
+						<label class="head__lbl" for="taskChbx">
+							<input class="head__chbx"  type="checkbox" name="" id="taskChbx">
+							<span></span>
+						</label>
+						<button class="head__btn" type="button">Add note</button>
+					</div>
+					<div class="head__admin">
+						<ul class="admin-list">
+							<li class="admin-list__items">
+								Admin
+								<ul class="admin-hover">
+									<li class="admin-hover__items">
+										<a href="#">Logout</a>
+									</li>
+									<li class="admin-hover__items">
+										<a href="#">My profile</a>
+									</li>
+									<li class="admin-hover__items">
+										<a href="#">Permissions</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</header>
+		<main class="main">
+			<section class="content">
+				<aside class="sidebar">
+					<div class="sidebar__all-tasks">
+						<a href="#">All tasks</a>
+					</div>
+					<div class="sidebar__category">
+						<a href="#">Category</a>
+					</div>
+				</aside>
+				<div class="tasks">
+					<div class="search">
+						<input class="search__input" type="search" name="tasksSearch" id="" placeholder="Search...">
+					</div>
+					<ul class="tasks-list">
+						
+					</ul>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<script src="./script.js" type="module"></script>
+</body>
+</html>
