@@ -4,30 +4,34 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/style.css">
-	<title>TODO</title>
+	<title>ToDo</title>
 </head>
 <body>
-	<div class="container wrapper">
-		<div class="row align-items-center justify-content-center inner-wrap">
-			<div class="registration-form  col-md-4">
-				<div class="name">
-					<input class="name-input inp" type="text" name="userName" id="name" required>
-				</div>
-				<div class="password">
-					<input class="password-input inp" type="password" name="userName" id="userPass" required>
-					<label class="chbx-label" for="showPass">
-						<input class="chbx" type="checkbox" name="userPassShow" id="showPass">
-						Показать пароль
-					</label>
-				</div>
-				<button class="btn" type="button">Регистрация</button>
-				<p class="text">Введите имя и пароль</p>
+	<div class="wrapper">
+		<div class="authorization user">
+			<label for="authLogin" class="user__lbl user__lbl_login">
+				Логин.
+				<input type="text" name="authLogin" id="authLogin" autocomplete="off" required placeholder="Логин...">
+			</label>
+			<label for="authPass" class="user__lbl user__lbl_pass">
+				Пароль.
+				<input type="password" name="authPass" id="authPass" required placeholder="Пароль...">
+			</label>
+			<label for="authChbx" class="user__lbl user__lbl_chbx">
+				Показать пароль.
+				<input type="checkbox" name="authChbx" id="authChbx">
+				<span class="circle"></span><span class="center"></span>
+			</label>
+			<div class="user__txt">
+				Введите Логин и Пароль.
 			</div>
+			<button class="user__btn authorization__btn" type="button">Войти</button>
+			<button class="registration-btn" type="button">Регистрация</button>
 		</div>
-	
+		<div class="alert" data-top="false"></div>
 	</div>
-	<script src="./Registration.js" type="module"></script>
+
+	<script src="./script.js" type="module"></script>
 </body>
 </html>

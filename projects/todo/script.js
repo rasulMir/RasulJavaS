@@ -1,1 +1,2 @@
-import AddTask from "./AddTask.js";
+import Authorization from "./Authorization.js";
+import Registration  from "./Registration.js";

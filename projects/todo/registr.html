@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>ToDo</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="registration user">
+			<label for="registrLogin" class="user__lbl user__lbl_login">
+				Логин.
+				<input type="text" name="registrLogin" id="registrLogin" autocomplete="off" required placeholder="Логин...">
+			</label>
+			<label for="registrPass" class="user__lbl user__lbl_pass">
+				Пароль.
+				<input type="password" name="registrPass" id="registrPass" required placeholder="Пароль...">
+			</label>
+			<label for="registrPassSecond" class="user__lbl user__lbl_pass">
+				Повторите пароль.
+				<input type="password" name="registrPass" id="registrPassSecond" required placeholder="Пароль...">
+			</label>
+			<label for="registrChbxShow"  class="user__lbl user__lbl_chbx  reg-lbl__chbx-show">
+				Показать пароль
+				<input type="checkbox" name="registrChbx" id="registrChbxShow">
+				<span class="circle"></span><span class="center"></span>
+			</label>
+			<label for="registrChbx" class="user__lbl user__lbl_chbx  reg-lbl__chbx">
+				Сгенирировать пароль
+				<input type="checkbox" name="registrChbx" id="registrChbx">
+				<span class="circle"></span><span class="center"></span>
+			</label>
+			<div class="user__txt">
+				Создайте Логин и Пароль.
+			</div>
+			<button class="user__btn registrated" type="button">Регистрация</button>
+		</div>
+		<div class="alert" data-top="false"></div>
+	</div>
+	<script src="./script.js" type="module"></script>
+</body>
+</html>
