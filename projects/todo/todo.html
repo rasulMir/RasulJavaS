@@ -4,9 +4,53 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>dlkf</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<title>ToDo</title>
 </head>
 <body>
-	
+	<div class="wrapper-todo">
+		<header class="header">
+			<div class="container">
+				<div class="head">
+					<a href="#" class="head__logo">Tasks</a>
+					<div class="head__tasks">
+						<input class="head__inp head__inp_date" type="date" name="date" id="headDate">
+						<input class="head__inp head__inp_txt" type="text" name="text" id="headTxt" placeholder="Задача">
+						<label for="headChbx" class="head__lbl_chbx">
+							<input class="head__inp head__inp_chbx" type="checkbox" name="chbx" id="headChbx">
+							<span class="head__lbl_chbx-circle"></span><span class="head__lbl_chbx-center"></span>
+						</label>
+						<button class="head__btn head__btn__add" id="appearTask" type="button">Добавить</button>
+					</div>
+					<ul class="head__admin">
+						<li class="head__adm-items">
+							Admin
+							<div class="head__links">
+								<a href="#" class="head__link">Admin</a>
+								<a href="#" class="head__link">Admin</a>
+								<a href="#" class="head__link">Admin</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<aside class="sidebar">
+				<a href="#" class="sidebar__link">All tasks</a>
+				<a href="#" class="sidebar__link">Category</a>
+			</aside>
+			<div class="content">
+				<div class="content__top">
+					<input placeholder="Search..." type="text" class="content__top-search" autocomplete="off">
+				</div>
+				<ul class="content__tasks">
+				
+				</ul>
+			</div>
+		</main>
+	</div>
+
+	<script src="./script.js" type="module"></script>
 </body>
 </html>
