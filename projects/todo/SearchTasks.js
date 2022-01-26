@@ -15,7 +15,9 @@ class SearchTasks {
 	}
 
 	init() {
-		this.search.addEventListener('input', this.checkTaskText);
+		if (location.pathname === "/projects/todo/todo.html") {
+			this.search.addEventListener('input', this.checkTaskText);
+		}
 	}
 }
 

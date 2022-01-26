@@ -58,8 +58,10 @@ class AddTask {
 	}
 
 	init() {
-		this.appearTasks(this.content, this.tasks);
-		this.addBtn.addEventListener('click', this.add);
+		if (location.pathname === "/projects/todo/todo.html") {		
+			this.appearTasks(this.content, this.tasks);
+			this.addBtn.addEventListener('click', this.add);
+		}
 	}
 }
 
