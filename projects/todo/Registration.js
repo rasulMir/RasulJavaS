@@ -94,7 +94,7 @@ class Registration extends Authorization {
 	}
 
 	initRegistr() {
-		if(location.pathname === "/projects/todo/registr.html") {
+		if(location.pathname.endsWith("registr.html")) {
 			this.registrLogin.addEventListener('change', this.checkNewlog);
 			document.addEventListener('click', event => {
 				let curr = event.target;

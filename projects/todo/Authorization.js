@@ -70,7 +70,7 @@ class Authorization {
 
 	initAuth() {
 		document.addEventListener('click', event => {
-			if (location.pathname === "/projects/todo/index.html") {
+			if (location.pathname.endsWith("index.html")) {
 				let curr = event.target;
 				this.showPass();
 				this.authorizationEvent(curr);
