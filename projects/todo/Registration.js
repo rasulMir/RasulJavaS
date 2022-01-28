@@ -41,6 +41,7 @@ class Registration extends Authorization {
 			this.registrPassSecond.type = 'password';
 		}
 	}
+
 	generatePass(pass, bool) {
 		this.registrPass.value = pass;
 		this.registrPassSecond.value = pass;
@@ -67,9 +68,9 @@ class Registration extends Authorization {
 	}
 
 	checkNewlog = (e) => {
-		let lowerCase = e.target.value.toLowerCase();
-		let login = this.checkLoginData(lowerCase);
-		if (login) {
+		let value = e.target.value.toLowerCase();
+		let user = this.checkData('login', value, false);
+		if (user.login) {
 			this.showAlert('Такои логин существует');
 		}
 		else return;
@@ -77,14 +78,18 @@ class Registration extends Authorization {
 
 	registrBtn(curr) {
 		if (curr.closest('.registrated')) {
-			if (this.registrLogin.value && this.registrPass.value && this.registrPassSecond.value) {
+			if (this.registrLogin.value &&
+							 this.registrPass.value &&
+							 			 this.registrPassSecond.value) {
 				let userInfo  = {
 					login : this.registrLogin.value.toLowerCase(),
-					pass : this.registrPass.value
+					pass : this.registrPass.value,
+					current : true,
+					tasks : [],
 				}
 				data.push(userInfo);
 				localStorage.setItem('user-info', JSON.stringify(data));
-				location.href = "./index.html";
+				this.redirect("./todo.html");
 			}
 			else {
 				this.showAlert('Заполните все поля');

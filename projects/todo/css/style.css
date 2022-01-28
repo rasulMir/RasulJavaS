@@ -89,7 +89,7 @@ input {
 .user__lbl_chbx > .center {
   top: 100%;
   left: 50%;
-  width: 2.6rem;
+  width: 2.3rem;
   height: .8rem;
   background: -webkit-gradient(linear, right top, left top, color-stop(50%, red), color-stop(50%, green));
   background: -webkit-linear-gradient(right, red 50%, green 50%);
@@ -100,7 +100,7 @@ input {
 
 .user__lbl_chbx > .circle {
   top: 87.5%;
-  left: 47%;
+  left: 48%;
   width: 1.5rem;
   height: 1.5rem;
   background-color: #fff;
@@ -116,7 +116,7 @@ input {
 }
 
 .user__lbl_chbx > input:checked + .circle {
-  left: 53%;
+  left: 52%;
 }
 
 .user__txt {
@@ -477,5 +477,211 @@ input {
 
 [data-important="true"] {
   background-color: red;
+}
+
+.edit-tasks-wrap {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 111;
+}
+
+[data-visible="true"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.edit-tasks__txt, .edit-tasks__date {
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border-radius: 2rem;
+}
+
+.edit-tasks {
+  padding: 2rem 1rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+}
+
+.edit-tasks__lbl {
+  padding: 2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.edit-tasks__lbl span {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.edit-tasks__lbl-center {
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, red), color-stop(50%, green));
+  background: -webkit-linear-gradient(left, red 50%, green 50%);
+  background: -o-linear-gradient(left, red 50%, green 50%);
+  background: linear-gradient(to right, red 50%, green 50%);
+  border-radius: 1rem;
+  z-index: 2;
+}
+
+.edit-tasks__lbl-circle {
+  left: 0;
+  width: 50%;
+  height: 2rem;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 .2rem #000;
+          box-shadow: 0 0 .2rem #000;
+  -webkit-transition: .4s ease-in-out;
+  -o-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  z-index: 3;
+}
+
+.edit-tasks__chbx {
+  display: none;
+}
+
+.edit-tasks__chbx:checked + .edit-tasks__lbl-circle {
+  left: 50%;
+}
+
+.edit-tasks__btns {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-tasks__btns > button {
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  border-radius: 2.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.edit-tasks__btns_exit {
+  background-color: red;
+}
+
+.edit-tasks__btns_edit {
+  background-color: green;
+}
+
+.change-pass__lbl {
+  display: block;
+  margin: 0 0 1.5rem 0;
+}
+
+.change-pass__lbl_chbx {
+  position: relative;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.change-pass__lbl_chbx > span {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.change-pass__lbl_circle {
+  left: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 3;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.change-pass__lbl_center {
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, red), color-stop(50%, blue));
+  background: -webkit-linear-gradient(left, red 50%, blue 50%);
+  background: -o-linear-gradient(left, red 50%, blue 50%);
+  background: linear-gradient(to right, red 50%, blue 50%);
+  border-radius: 1rem;
+  z-index: 2;
+}
+
+.change-pass__inp {
+  display: block;
+  width: 100%;
+  margin: .5rem 0 0 0;
+  padding: .5rem 1rem;
+  font-size: 1.6rem;
+}
+
+.change-pass__inp_chbx {
+  display: none;
+}
+
+.change-pass__inp_chbx:checked + .change-pass__lbl_circle {
+  left: calc(100% - 1.6rem);
+}
+
+.change-pass__btns {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: block;
+  width: 70%;
+  font-size: 1.6rem;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.change-pass__btns_change {
+  background-color: blue;
+  margin: 0 0 1rem 0;
+}
+
+.change-pass__btns_back {
+  text-decoration: none;
+  background-color: green;
 }
 /*# sourceMappingURL=style.css.map */

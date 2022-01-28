@@ -15,7 +15,7 @@
 					<a href="#" class="head__logo">Tasks</a>
 					<div class="head__tasks">
 						<input class="head__inp head__inp_date" type="date" name="date" id="headDate">
-						<input class="head__inp head__inp_txt" type="text" name="text" id="headTxt" placeholder="Задача">
+						<input class="head__inp head__inp_txt" type="text" name="text" id="headTxt" autocomplete="off" placeholder="Задача">
 						<label for="headChbx" class="head__lbl_chbx">
 							<input class="head__inp head__inp_chbx" type="checkbox" name="chbx" id="headChbx">
 							<span class="head__lbl_chbx-circle"></span><span class="head__lbl_chbx-center"></span>
@@ -24,11 +24,8 @@
 					</div>
 					<ul class="head__admin">
 						<li class="head__adm-items">
-							Admin
 							<div class="head__links">
-								<a href="#" class="head__link">Admin</a>
-								<a href="#" class="head__link">Admin</a>
-								<a href="#" class="head__link">Admin</a>
+								<a href="./pass.html" class="head__link">Изменить пароль</a>
 							</div>
 						</li>
 					</ul>
@@ -49,6 +46,20 @@
 				</ul>
 			</div>
 		</main>
+		<div class="edit-tasks-wrap" data-visible="">
+			<div class="edit-tasks user">
+				<input class="edit-tasks__txt" type="text" name="editTask" id="editTask" autocomplete="off" placeholder="Change...">
+				<input class="edit-tasks__date" type="date" name="editDate" id="editDate">
+				<label for="editChbx" class="edit-tasks__lbl">
+					<input class="edit-tasks__chbx" type="checkbox" name="editChbx" id="editChbx">
+					<span class="edit-tasks__lbl-circle"></span><span class="edit-tasks__lbl-center"></span>
+				</label>
+				<div class="edit-tasks__btns">
+					<button class="edit-tasks__btns_exit" type="button">Exit</button>
+					<button class="edit-tasks__btns_edit" type="button">Edit</button>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<script src="./script.js" type="module"></script>

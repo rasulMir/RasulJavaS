@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Change Password</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="user change-pass">
+			<label for="oldPass" class="change-pass__lbl">
+				Введите старый пароль.
+				<input class="change-pass__inp" type="password" name="oldPass" id="oldPass">
+			</label>
+			<label for="newPassFirst" class="change-pass__lbl">
+				Введите новый пароль.
+				<input class="change-pass__inp" type="password" name="newPass" id="newPassFirst">
+			</label>
+			<label for="newPassSecond" class="change-pass__lbl">
+				Подтвердить новый пароль.
+				<input class="change-pass__inp" type="password" name="newPass" id="newPassSecond">
+			</label>
+			<label for="showPass" class="change-pass__lbl change-pass__lbl_chbx">
+				<input class="change-pass__inp_chbx" type="checkbox" name="showPass" id="showPass">
+				<span class="change-pass__lbl_circle"></span><span class="change-pass__lbl_center"></span>
+			</label>
+			<button class="change-pass__btns change-pass__btns_change" type="click">Изменить</button>
+			<a class="change-pass__btns change-pass__btns_back" href="./todo.html">Назад</a>
+		</div>
+	</div>
+
+	<script src="./script.js" type="module"></script>
+</body>
+</html>

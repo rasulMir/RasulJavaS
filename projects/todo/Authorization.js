@@ -7,20 +7,29 @@ class Authorization {
 		this.initAuth();
 	}
 
-	checkLoginData(login) {
+	checkData(prop, check, bool) {
 		if (!JSON.parse(localStorage.getItem('user-info'))) {
 			localStorage.setItem('user-info', JSON.stringify(data));
 		}
-		let data = JSON.parse(localStorage.getItem('user-info'));
-		return data.some(data => data.login === login);
+		let storage = JSON.parse(localStorage.getItem('user-info'));
+		let filtered = storage.filter(data => {
+			data.current = false;
+			if (data[prop] === check) {
+				if (bool) data.current = true;
+				return data[prop] === check;
+			}
+			return;
+		})[0];
+		if (bool) {
+			localStorage.setItem('user-info', JSON.stringify(storage));
+		}
+		return filtered;
 	}
 
-	checkPassData(pass) {
-		if (!JSON.parse(localStorage.getItem('user-info'))) {
-			localStorage.setItem('user-info', JSON.stringify(data));
-		}
-		let data = JSON.parse(localStorage.getItem('user-info'));
-		return data.some(data => data.pass === pass);
+	redirect(url) {
+		setTimeout(() => {
+			location.href = url;
+		}, 0);
 	}
 
 	showAlert(txt, time = 2) {
@@ -34,10 +43,9 @@ class Authorization {
 
 	authorizationEvent(e) {
 		if (e.closest('.authorization__btn')) {
-			let login = this.checkLoginData(this.login.value);
-			let pass = this.checkPassData(this.pass.value);
-			if (login && pass) {
-				location.href = './todo.html';
+			let user = this.checkData('login', this.login.value, true);
+			if (user.login && user.pass) {
+				this.redirect('./todo.html');
 			}
 			else {
 				this.showAlert(`Неправильный логин или пароль`);
