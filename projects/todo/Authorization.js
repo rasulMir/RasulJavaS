@@ -61,12 +61,11 @@ class Authorization {
 		else return;
 	}
 
-	showPass() {
-		let chbx = this.chbx.checked;
-		if (chbx) {
-			this.pass.type = 'text';
+	showPass(chbx, input) {
+		if (chbx.checked) {
+			input.type = 'text';
 		}
-		else this.pass.type = 'password';
+		else input.type = 'password';
 	}
 
 	initDOM() {
@@ -80,7 +79,7 @@ class Authorization {
 		document.addEventListener('click', event => {
 			if (location.pathname.endsWith("index.html")) {
 				let curr = event.target;
-				this.showPass();
+				this.showPass(this.chbx, this.pass);
 				this.authorizationEvent(curr);
 				this.registrationEvent(curr);
 			}
