@@ -1,4 +1,4 @@
-import data from "./data.js";
+import data from "../data.js";
 
 class Authorization {
 	constructor(data) {
@@ -45,7 +45,7 @@ class Authorization {
 		if (e.closest('.authorization__btn')) {
 			let user = this.checkData('login', this.login.value, true);
 			if (user.login && user.pass) {
-				this.redirect('./todo.html');
+				this.redirect('./html-pages/todo.html');
 			}
 			else {
 				this.showAlert(`Неправильный логин или пароль`);
@@ -56,7 +56,7 @@ class Authorization {
 
 	registrationEvent(e) {
 		if (e.closest('.registration-btn')) {
-			location.href = './registr.html';
+			this.redirect('./html-pages/registr.html');
 		}
 		else return;
 	}

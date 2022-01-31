@@ -684,4 +684,186 @@ input {
   text-decoration: none;
   background-color: green;
 }
+
+.admin {
+  position: relative;
+  background-color: #fff;
+  padding: 2rem;
+  display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.admin__title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.admin__title_users {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.admin__title_add-user {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.admin__users-list {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+}
+
+.admin__users-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+.admin__users-item::before {
+  content: attr(data-index);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.admin__user-login {
+  padding: 1rem 2rem;
+}
+
+.admin__users-btn {
+  padding: 1rem;
+  color: white;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.admin__users-btns_del {
+  background-color: red;
+}
+
+.admin__users-btns_change {
+  background-color: #0011ff;
+}
+
+.admin__curr-admin {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+}
+
+.admin__curr-admin > input {
+  padding: .5rem 1rem;
+  border: 0.1rem solid #003c80;
+  display: block;
+  width: 100%;
+  margin: 0 0 1rem 0;
+}
+
+.admin__add-new-user {
+  display: block;
+  margin: 0 auto;
+  padding: .5rem 1rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  background-color: blue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.admin__curr-chbxs {
+  padding: 1.5rem;
+}
+
+.admin__curr-chbxs > label {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.admin__exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .5rem;
+  background-color: green;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.admin-drag {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 400px;
+          flex: 0 0 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem;
+  background-color: rgba(82, 238, 77, 0.514);
+  font-size: 1.6rem;
+}
+
+.admin-drag__title {
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+.admin-drag__zones {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 45%;
+          flex: 0 0 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.admin-drag__item {
+  cursor: pointer;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: .5rem;
+  margin: 0 0 .7rem 0;
+  width: 70%;
+  background-color: #5252c5;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+}
 /*# sourceMappingURL=style.css.map */

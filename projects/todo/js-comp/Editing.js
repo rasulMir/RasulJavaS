@@ -1,5 +1,4 @@
 import AddTask from "./AddTask.js";
-import data from "./data.js";
 class Editing extends AddTask {
 	constructor(el) {
 		super();
@@ -34,6 +33,13 @@ class Editing extends AddTask {
 		}
 	}
 
+	isAdmin() {
+		this.userInfo.forEach(user => {
+			
+		});
+		return;
+	}
+
 	delTask(del) {
 		if (del.closest('.content__btns_del')) {
 			let ind = del.closest('.content__items').dataset.index;
@@ -52,15 +58,28 @@ class Editing extends AddTask {
 		if (curr.closest('.edit-tasks__btns_edit')) {
 			this.userInfo.forEach(e => {
 				if (e.current) {
-					e.tasks[this.curentTaskInd].date = this.editCurrDate.value || e.tasks[this.curentTaskInd].date;
-					e.tasks[this.curentTaskInd].text = this.editCurrtxt.value || e.tasks[this.curentTaskInd].text;
-					e.tasks[this.curentTaskInd].chbx = this.editCurrChbx.checked || e.tasks[this.curentTaskInd].chbx;
+					e.tasks[this.curentTaskInd].date = this.editCurrDate.value;
+					e.tasks[this.curentTaskInd].text = this.editCurrtxt.value;
+					e.tasks[this.curentTaskInd].chbx = this.editCurrChbx.checked;
 				}
 			});
-	
+
 			this.currentUser();
 			localStorage.setItem('user-info', JSON.stringify(this.userInfo));
 			this.displayEditTaskWrap(curr, '.edit-tasks__btns_edit');
+		}
+		else return;
+	}
+
+	currentTaskOnEditTaskWrap = (curr, sel) => {
+		if (curr.closest(sel) && this.editTasksWrap.dataset.visible) {
+			this.userInfo.forEach(e => {
+				if (e.current) {
+					this.editCurrDate.value = e.tasks[this.curentTaskInd].date;
+					this.editCurrtxt.value = e.tasks[this.curentTaskInd].text;
+					this.editCurrChbx.checked = (e.tasks[this.curentTaskInd].chbx) ? true : '';
+				}
+			});
 		}
 		else return;
 	}
@@ -87,7 +106,9 @@ class Editing extends AddTask {
 
 		if (curr.closest(sel)) {
 			let visible = !!this.editTasksWrap.dataset.visible;
-			if (!visible) this.editTasksWrap.dataset.visible = !visible;
+			if (!visible) {
+				this.editTasksWrap.dataset.visible = !visible;
+			}
 			else this.editTasksWrap.dataset.visible = '';
 			if (bool) {
 				return curr.closest('.content__items').dataset.index;
@@ -105,6 +126,7 @@ class Editing extends AddTask {
 				this.taskDone(curr);
 				this.delTask(curr);
 				this.curentTaskInd = this.displayEditTaskWrap(curr, '.content__btns_edit', true);
+				this.currentTaskOnEditTaskWrap(curr, '.content__btns_edit');
 			});
 
 			this.editTasksWrap.addEventListener('click', event => {

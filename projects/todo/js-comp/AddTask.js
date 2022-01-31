@@ -12,8 +12,14 @@ class AddTask {
 		storage.forEach(e => {
 			if (e.current) {
 				headAdmItems.insertAdjacentText('afterbegin', e.login);
+				if (e.isAdmin) {
+					const headLinks = document.querySelector('.head__links');
+					const adminPageLink = `<a href="../html-pages/admin.html" class="head__link">Админ панель</a>`;
+					headLinks.insertAdjacentHTML('beforeend', adminPageLink);
+				}
 			}
 		});
+		localStorage.setItem('user-info', JSON.stringify(this.userInfo));
 	}
 
 	getDate() {

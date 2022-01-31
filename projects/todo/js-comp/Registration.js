@@ -1,4 +1,4 @@
-import data from "./data.js";
+import data from "../data.js";
 import Authorization from "./Authorization.js";
 class Registration extends Authorization {
 	constructor(data) {

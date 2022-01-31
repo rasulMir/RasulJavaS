@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Drag&Drop</title>
+</head>
+<body>
+	
+	<div class="wrapper">
+		<div class="admin">
+			<div class="admin__title">
+				<span class="admin__title_users">users</span>
+				<span class="admin__title_add-user">Add new user</span>
+			</div>
+			<ul class="admin__users-list">
+				
+			</ul>
+			<div class="admin__curr-admin">
+				<input class="admin__inp" type="text" name="adminLogin" id="adminLogin">
+				<input class="admin__inp" type="password" name="adminPass" id="adminPass">
+				<div class="admin__curr-chbxs">
+					<label for="showPass">
+						<input type="checkbox" name="" id="showPass">
+						show password
+					</label>
+					<label for="makeAdmin">
+						<input type="checkbox" name="" id="makeAdmin">
+						make admin
+					</label>
+					<label for="generate">
+						<input type="checkbox" name="" id="generate">
+						generate
+					</label>
+				</div>
+				<button class="admin__add-new-user">add user</button>
+			</div>
+			<div class="admin__exit">Back</div>
+		</div>
+		<div class="admin-drag">
+			<ul class="admin-drag__zones admin-drag__zones_left">
+				<li class="admin-drag__title">Active</li>
+				<li class="admin-drag__item canDelete" draggable="true">can delete</li>
+				<li class="admin-drag__item canEdit" draggable="true">can edit</li>
+				<li class="admin-drag__item canAdd" draggable="true">can add</li>
+			</ul>
+			<ul class="admin-drag__zones admin-drag__zones_right">
+				<li class="admin-drag__title">Available</li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="../script.js" type="module"></script>
+</body>
+</html>
