@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Credit</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<div class="credit">
+				<h2 class="credit-title">
+					Рассчитать кредит:
+				</h2>
+				<div class="credit__data-input">
+					<div class="credit__inp-wrap">
+						<label for="creditSumm" class="credit__lbl">Сумма кредита:</label>
+						<input class="credit__inp" type="number" name="creditSumm" id="creditSumm">
+					</div>
+					<div class="credit__inp-wrap">
+						<label for="creditTerm" class="credit__lbl">Срок кредита:</label>
+						<input class="credit__inp" type="number" name="creditTerm" id="creditTerm">
+					</div>
+					<div class="credit__inp-wrap">
+						<label for="creditPercent" class="credit__lbl">Процентная ставка в год:</label>
+						<input class="credit__inp" type="number" name="creditPercent" id="creditPercent">
+					</div>
+					<div class="credit__inp-wrap">
+						<div class="credit__lbl">Вид кредита:</div>
+						<select class="credit__form">
+							<option class="credit__form-items annuitet"  data-active="true">Аннуитет</option>
+							<option class="credit__form-items usual"  data-active="">Дифференцированный</option>
+						</select>
+					</div>
+				</div>
+				<button class="credit__calc-btn">Рассчитать</button>
+			</div>
+			<div class="output">
+				<h2 class="credit-title">
+					Результаты рассчета:
+				</h2>
+				<div class="output__body">
+					<table>
+						<thead>
+							<tr class="head-tr">
+								<th>
+									Сумма кредита:
+								</th>
+								<th>
+									% ставка:
+								</th>
+								<th>
+									Ежемесячный платеж:
+								</th>
+								<th>
+									Переплата по кредиту:
+								</th>
+								<th>
+									Общая выплата:
+								</th>
+							</tr>
+						</thead>
+						<tbody id="TBody">
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./script.js"></script>
+</body>
+</html>
